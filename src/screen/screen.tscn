@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/screen/Windows_Screen.png" type="Texture" id=1]
 [ext_resource path="res://src/screen/icon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screen/screen.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/progress-bar-over.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/progress-bar-under.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/progress-bar-fill.png" type="Texture" id=6]
 
 [node name="screen" type="Control"]
 anchor_right = 1.0
@@ -26,6 +29,8 @@ __meta__ = {
 }
 
 [node name="icon" parent="screen" instance=ExtResource( 2 )]
+anchor_right = 0.05
+anchor_bottom = 0.08
 margin_left = 149.831
 margin_top = 131.102
 margin_right = 149.831
@@ -37,3 +42,16 @@ margin_top = 370.762
 margin_right = 266.351
 margin_bottom = 396.762
 text = "Do NOT hold R to leave workstation"
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 250.0
+margin_top = 385.0
+margin_right = 378.0
+margin_bottom = 395.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
