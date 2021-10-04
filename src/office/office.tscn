@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/office/Computer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/screen/screen.tscn" type="PackedScene" id=3]
+
+[node name="office" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 321.026, 243.245 )
+
+[node name="Computer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 321.547, 145.146 )
+
+[node name="screen" parent="." instance=ExtResource( 3 )]
+margin_right = 640.0
+margin_bottom = 400.0

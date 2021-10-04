@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/menu/settings.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/office-main-menu.png" type="Texture" id=2]
+[ext_resource path="res://assets/theme/main_menu.tres" type="Theme" id=3]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -12,5 +15,67 @@ __meta__ = {
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
 
 [node name="settings" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="options" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -55.5
+margin_right = 60.0
+margin_bottom = 55.5
+custom_constants/separation = 18
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new_game" type="Button" parent="options"]
+margin_right = 120.0
+margin_bottom = 44.21
+rect_min_size = Vector2( 120, 30 )
+text = "New Game"
+
+[node name="settings" type="Button" parent="options"]
+margin_top = 62.0
+margin_right = 120.0
+margin_bottom = 106.21
+rect_min_size = Vector2( 120, 30 )
+text = "Settings"
+
+[node name="quit" type="Button" parent="options"]
+margin_top = 124.0
+margin_right = 120.0
+margin_bottom = 168.21
+rect_min_size = Vector2( 120, 30 )
+text = "Quit"
+
+[node name="copyright" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -325.0
+margin_top = -19.0
+margin_right = -5.0
+text = "Copyright (c) 2021 Jack Anderson"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -115.0
+margin_right = -5.0
+margin_bottom = 19.0
+text = "v0.0.1 Demo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
