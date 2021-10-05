@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player_05.png" type="Texture" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://assets/player/player_08.png" type="Texture" id=11]
 [ext_resource path="res://assets/player/player_09.png" type="Texture" id=12]
 [ext_resource path="res://assets/player/player_10.png" type="Texture" id=13]
+[ext_resource path="res://src/ui_resources/TextureProgress.tscn" type="PackedScene" id=14]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "still_down"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -29,7 +30,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "walk_down"
 length = 0.4
 tracks/0/type = "value"
@@ -45,7 +46,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "walk_left"
 length = 0.4
 tracks/0/type = "value"
@@ -61,7 +62,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "walk_right"
 length = 0.4
 tracks/0/type = "value"
@@ -77,7 +78,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "walk_up"
 length = 0.4
 tracks/0/type = "value"
@@ -93,7 +94,10 @@ tracks/0/keys = {
 "values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 11 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 20, 20 )
+
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 20, 20 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -103,25 +107,40 @@ script = ExtResource( 1 )
 texture = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/still_down = SubResource( 2 )
-anims/walk_down = SubResource( 3 )
-anims/walk_left = SubResource( 4 )
-anims/walk_right = SubResource( 5 )
-anims/walk_up = SubResource( 6 )
+anims/still_down = SubResource( 1 )
+anims/walk_down = SubResource( 2 )
+anims/walk_left = SubResource( 3 )
+anims/walk_right = SubResource( 4 )
+anims/walk_up = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
+position = Vector2( 0, -20 )
+shape = SubResource( 7 )
+
+[node name="Prompts" type="Control" parent="."]
+visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control"]
-margin_right = 88.0
-margin_bottom = 14.0
-text = "Hold R to Use"
+[node name="Label" type="Label" parent="Prompts"]
+margin_left = -73.1856
+margin_top = 28.9914
+margin_right = 81.8144
+margin_bottom = 42.9914
+text = "Hold R to Use Computer"
+
+[node name="TextureProgress" parent="Prompts" instance=ExtResource( 14 )]
+margin_left = -64.7003
+margin_top = 43.8406
+margin_right = 63.2997
+margin_bottom = 53.8406
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="detection" to="." method="_on_detection_area_entered"]
+[connection signal="area_exited" from="detection" to="." method="_on_detection_area_exited"]

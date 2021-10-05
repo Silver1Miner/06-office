@@ -40,3 +40,11 @@ margin_bottom = 396.762
 text = "Do NOT hold R to leave workstation"
 
 [node name="TextureProgress" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -15.0
+margin_right = 64.0
+margin_bottom = -5.0
