@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/screen/Windows_Screen.png" type="Texture" id=1]
-[ext_resource path="res://src/screen/icon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/screen/icons/mail.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screen/screen.gd" type="Script" id=3]
 [ext_resource path="res://src/ui_resources/TextureProgress.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme/screen.tres" type="Theme" id=5]
+[ext_resource path="res://src/screen/icons/tasks.tscn" type="PackedScene" id=6]
 
 [node name="screen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,21 +26,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="icon" parent="screen" instance=ExtResource( 2 )]
-anchor_right = 0.05
-anchor_bottom = 0.08
-margin_left = 70.5456
-margin_top = 67.3905
-margin_right = 70.5456
-margin_bottom = 67.3905
-rect_min_size = Vector2( 32, 32 )
+[node name="mail" parent="screen" instance=ExtResource( 2 )]
+margin_left = 68.8651
+margin_top = 63.5678
+margin_right = 100.865
+margin_bottom = 95.5678
+
+[node name="tasks" parent="screen" instance=ExtResource( 6 )]
+margin_left = 67.3558
+margin_top = 122.654
+margin_right = 99.3558
+margin_bottom = 154.654
 
 [node name="Label" type="Label" parent="."]
-margin_left = 207.351
-margin_top = 370.762
-margin_right = 266.351
-margin_bottom = 396.762
-text = "Do NOT hold R to leave workstation"
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -180.0
+margin_top = -30.0
+margin_right = 180.0
+margin_bottom = -4.0
+text = "DO NOT (hold R to leave workstation)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureProgress" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -48,3 +61,10 @@ margin_left = -64.0
 margin_top = -15.0
 margin_right = 64.0
 margin_bottom = -5.0
+
+[node name="computer_number" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 19.0
+text = "# 0"
