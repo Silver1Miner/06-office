@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/screen/Windows_Screen.png" type="Texture" id=1]
 [ext_resource path="res://src/screen/icons/mail.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://src/ui_resources/TextureProgress.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/theme/screen.tres" type="Theme" id=5]
 [ext_resource path="res://src/screen/icons/tasks.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/screen/windows/email.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/screen/windows/tasks.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/screen/icons/calendar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/screen/icons/trash.tscn" type="PackedScene" id=11]
 
 [node name="screen" type="Control"]
 anchor_right = 1.0
@@ -38,6 +42,18 @@ margin_top = 122.654
 margin_right = 99.3558
 margin_bottom = 154.654
 
+[node name="calendar" parent="screen" instance=ExtResource( 9 )]
+margin_left = 65.1028
+margin_top = 181.278
+margin_right = 97.1028
+margin_bottom = 213.278
+
+[node name="trash" parent="screen" instance=ExtResource( 11 )]
+margin_left = 535.976
+margin_top = 297.452
+margin_right = 567.976
+margin_bottom = 329.452
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -68,3 +84,9 @@ anchor_right = 1.0
 margin_left = -40.0
 margin_bottom = 19.0
 text = "# 0"
+
+[node name="tasks" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="email" parent="." instance=ExtResource( 7 )]
+visible = false

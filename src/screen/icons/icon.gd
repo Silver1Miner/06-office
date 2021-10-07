@@ -20,12 +20,13 @@ func _ready() -> void:
 		push_error("timer connect fail")
 
 func _on_pressed() -> void:
-	if first_press:
-		emit_signal("icon_pressed", identity)
-		first_press = false
-	else:
-		first_press = true
-		timer.start()
+	emit_signal("icon_pressed", identity)
+	#if first_press:
+	#	emit_signal("icon_pressed", identity)
+	#	first_press = false
+	#else:
+	#	first_press = true
+	#	timer.start()
 
 func _on_timer_timeout() -> void:
 	first_press = false

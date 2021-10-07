@@ -3,6 +3,9 @@ extends Control
 var active = false
 var current_computer = 0
 
+onready var email = $email
+onready var tasks = $tasks
+
 var LEFT_LIMIT = 60
 var RIGHT_LIMIT = 580
 var TOP_LIMIT = 60
@@ -22,6 +25,13 @@ func update_display() -> void:
 
 func _on_icon_pressed(identity: String) -> void:
 	print(identity + " icon pressed")
+	match identity:
+		"MAIL":
+			email.visible = true
+			tasks.visible = false
+		"TASKS":
+			email.visible = false
+			tasks.visible = true
 
 var new_hold = false
 func _process(_delta: float) -> void:
