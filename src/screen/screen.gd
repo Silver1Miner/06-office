@@ -6,9 +6,9 @@ var current_computer = 0
 onready var email = $email
 onready var tasks = $tasks
 
-var LEFT_LIMIT = 60
+var LEFT_LIMIT = 55
 var RIGHT_LIMIT = 580
-var TOP_LIMIT = 60
+var TOP_LIMIT = 55
 var BOTTOM_LIMIT = 340
 var capture_mouse := true
 onready var progress = $TextureProgress
@@ -50,6 +50,8 @@ func _process(_delta: float) -> void:
 	 and get_global_mouse_position().x < RIGHT_LIMIT \
 	 and get_global_mouse_position().y < BOTTOM_LIMIT \
 	 and get_global_mouse_position().y > TOP_LIMIT:
-		Input.set_custom_mouse_cursor(arrow)
+		Input.set_custom_mouse_cursor(arrow,
+			Input.CURSOR_ARROW,
+			Vector2(32, 32))
 	else:
 		Input.set_custom_mouse_cursor(null)

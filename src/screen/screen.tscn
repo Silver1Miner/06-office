@@ -64,6 +64,7 @@ margin_top = -30.0
 margin_right = 180.0
 margin_bottom = -4.0
 text = "DO NOT (hold R to leave workstation)"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
