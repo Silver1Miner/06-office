@@ -63,12 +63,17 @@ margin_top = -30.0
 margin_right = 100.0
 margin_bottom = -10.0
 
+[node name="Label" parent="SwitchCommand" index="1"]
+text = "LOG OFF"
+
 [node name="computer_number" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -40.0
-margin_bottom = 19.0
-text = "# 0"
+margin_left = -79.0
+margin_top = 6.0
+margin_right = -3.0
+margin_bottom = 25.0
+text = "#S04260245"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,3 +83,5 @@ visible = false
 
 [node name="email" parent="." instance=ExtResource( 7 )]
 visible = false
+
+[editable path="SwitchCommand"]

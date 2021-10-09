@@ -18,7 +18,6 @@ signal exit_screen
 func _ready() -> void:
 	if switch_command.connect("meter_full", self, "_on_meter_full") != OK:
 		push_error("switch connect fail")
-	switch_command.change_label("Hold to exit screen")
 	for icon in $screen.get_children():
 		if icon.connect("icon_pressed", self, "_on_icon_pressed") != OK:
 			push_error("signal connect fail")

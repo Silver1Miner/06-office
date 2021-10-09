@@ -16,13 +16,7 @@ func _ready() -> void:
 
 var dialogue = {
 	"0": {
-		"text": "Well, this is the last battle for now. Let's make it a glorious one!"
-	},
-	"1": {
-		"text": "It's that same tactical advisor from before, isn't it? What a dangerous opponent."
-	},
-	"2": {
-		"text": "Well... No turning back now."
+		"text": "This is a placeholder!"
 	},
 }
 

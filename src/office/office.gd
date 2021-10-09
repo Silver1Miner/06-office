@@ -1,30 +1,31 @@
 extends Control
 
-var not_in_screen := true # false if in screen
-onready var screen = $screen
-onready var computer = $Computer
 onready var textbox = $textbox
+onready var lobby = $lobby
+onready var work_desks = $work_desks
+onready var hallway = $hallway
+
+var office_text = {
+	"0": {
+		"text": "The main work area."
+	},
+}
 
 func _ready() -> void:
-	if computer.connect("enter_screen", self, "_on_screen_enter") != OK:
-		push_error("signal connect fail")
-	if screen.connect("exit_screen", self, "_on_screen_exit") != OK:
-		push_error("signal connect fail")
+	if work_desks.connect("go_to_hallway", self, "_on_go_to_hallway") != OK:
+		push_error("office signal connect fail")
+	if hallway.connect("go_to_work_desks", self, "_on_go_to_work_desks") != OK:
+		push_error("office signal connect fail")
+	textbox.initialize(office_text)
 
-func play_textbox(text) -> void:
-	textbox.initialize(text)
+func _on_go_to_hallway() -> void:
+	work_desks.visible = false
+	lobby.visible = false
+	hallway.visible = true
+	textbox.initialize({"0":{"text":"The office hallway"}})
 
-func _on_screen_enter(current_computer) -> void:
-	print("screen entered at computer ", current_computer)
-	textbox.end_text()
-	screen.current_computer = current_computer
-	screen.update_display()
-	not_in_screen = false
-	screen.visible = true
-	screen.active = true
-
-func _on_screen_exit() -> void:
-	print("screen exited")
-	not_in_screen = true
-	screen.active = false
-	screen.visible = false
+func _on_go_to_work_desks() -> void:
+	lobby.visible = false
+	hallway.visible = false
+	work_desks.visible = true
+	textbox.initialize({"0":{"text":"The main work area"}})
