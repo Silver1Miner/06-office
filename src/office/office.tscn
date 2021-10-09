@@ -1,23 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/office/annie-spratt-FSFfEQkd1sc-unsplash.jpg" type="Texture" id=1]
 [ext_resource path="res://src/office/Computer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/screen/screen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/office/office.gd" type="Script" id=4]
+[ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=5]
 
-[node name="office" type="Node2D"]
+[node name="office" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 1
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 321.026, 243.245 )
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Computer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 321.547, 145.146 )
+position = Vector2( 476.758, 236.79 )
 
 [node name="screen" parent="." instance=ExtResource( 3 )]
 visible = false
-margin_right = 640.0
-margin_bottom = 400.0
+
+[node name="textbox" parent="." instance=ExtResource( 5 )]

@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/player/player_08.png" type="Texture" id=11]
 [ext_resource path="res://assets/player/player_09.png" type="Texture" id=12]
 [ext_resource path="res://assets/player/player_10.png" type="Texture" id=13]
-[ext_resource path="res://src/ui_resources/TextureProgress.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "still_down"
