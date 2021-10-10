@@ -11,8 +11,8 @@ func _ready() -> void:
 	timer.autostart = true
 	if timer.connect("timeout", self, "_on_timer_timeout") != OK:
 		push_error("timer connect fail")
-	initialize(dialogue)
-	#visible = false
+	#initialize(dialogue)
+	visible = false
 
 var dialogue = {
 	"0": {

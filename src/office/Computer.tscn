@@ -1,10 +1,29 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://src/office/Computer.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=3]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+export var computer_id := 2
+onready var on_button = $SwitchCommand
+
+signal enter_screen(computer_id)
+
+func _ready() -> void:
+	if on_button.connect(\"meter_full\", self, \"_on_meter_full\") != OK:
+		push_error(\"signal connect fail\")
+	on_button.change_label(\"HOLD to access Computer \" + str(computer_id))
+
+func get_computer_id() -> int:
+	return computer_id
+
+func _on_meter_full() -> void:
+	emit_signal(\"enter_screen\", computer_id)
+"
+
 [node name="Computer" type="Sprite"]
-script = ExtResource( 2 )
+script = SubResource( 1 )
 
 [node name="SwitchCommand" parent="." instance=ExtResource( 3 )]
 margin_left = -100.0

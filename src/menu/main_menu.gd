@@ -13,7 +13,7 @@ func _ready() -> void:
 		push_error("button connect fail")
 
 func _on_new_game_pressed() -> void:
-	if get_tree().change_scene("res://src/office/office.tscn") != OK:
+	if get_tree().change_scene("res://src/office/lobby.tscn") != OK:
 		push_error("failed to start game")
 
 func _on_settings_pressed() -> void:

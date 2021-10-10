@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/office/nrd-c3tNiAb098I-unsplash.jpg" type="Texture" id=1]
 [ext_resource path="res://src/office/hallway.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=4]
 
 [node name="hallway" type="TextureRect"]
 anchor_right = 1.0
@@ -23,4 +24,16 @@ margin_bottom = 220.0
 [node name="Label" parent="to_work_desks" index="1"]
 text = "Enter Work Area"
 
+[node name="to_lobby" parent="." instance=ExtResource( 3 )]
+margin_left = 237.495
+margin_top = 350.888
+margin_right = 437.495
+margin_bottom = 370.888
+
+[node name="Label" parent="to_lobby" index="1"]
+text = "Go to Lobby"
+
+[node name="textbox" parent="." instance=ExtResource( 4 )]
+
 [editable path="to_work_desks"]
+[editable path="to_lobby"]
