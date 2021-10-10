@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/screen/Windows_Screen.png" type="Texture" id=1]
 [ext_resource path="res://src/screen/icons/mail.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/screen/windows/email.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/screen/windows/tasks.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/screen/icons/calendar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/screen/windows/calendar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/screen/icons/trash.tscn" type="PackedScene" id=11]
 
 [node name="screen" type="Control"]
@@ -77,6 +78,9 @@ text = "#S04260245"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="calendar" parent="." instance=ExtResource( 10 )]
+visible = false
 
 [node name="tasks" parent="." instance=ExtResource( 8 )]
 visible = false

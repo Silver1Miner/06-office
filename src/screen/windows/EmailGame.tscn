@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/screen/icons/icon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/theme/screen.tres" type="Theme" id=2]
+[ext_resource path="res://assets/screen/icons/mail-forward.png" type="Texture" id=3]
+[ext_resource path="res://assets/screen/icons/mail-reply-sender.png" type="Texture" id=4]
+
+[node name="EmailGame" type="HBoxContainer"]
+margin_top = 32.0
+margin_right = 524.0
+margin_bottom = 301.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mail_headings" type="ItemList" parent="."]
+margin_right = 200.0
+margin_bottom = 269.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="mail_content" type="VBoxContainer" parent="."]
+margin_left = 204.0
+margin_right = 524.0
+margin_bottom = 269.0
+custom_constants/separation = 14
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mail_content"]
+margin_right = 320.0
+margin_bottom = 32.0
+custom_constants/separation = 24
+
+[node name="reply" parent="mail_content/HBoxContainer" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 4 )
+identity = "REPLY"
+icon_texture = ExtResource( 4 )
+
+[node name="Label" parent="mail_content/HBoxContainer/reply" index="1"]
+text = "Reply"
+
+[node name="forward" parent="mail_content/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 56.0
+margin_right = 88.0
+texture_normal = ExtResource( 3 )
+identity = "FORWARD"
+icon_texture = ExtResource( 3 )
+
+[node name="Label" parent="mail_content/HBoxContainer/forward" index="1"]
+text = "Forward"
+
+[node name="Label" type="Label" parent="mail_content"]
+margin_top = 46.0
+margin_right = 320.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 320, 20 )
+text = "REMINDER TO ALL EMPLOYEES"
+valign = 2
+
+[node name="Content" type="RichTextLabel" parent="mail_content"]
+margin_top = 80.0
+margin_right = 320.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 320, 180 )
+text = "Employees are required to wear their Augumented Reality (AR) glasses at all times. Failure to wear your AR will lead to disciplinary action up to termination of employment."
+
+[editable path="mail_content/HBoxContainer/reply"]
+[editable path="mail_content/HBoxContainer/forward"]

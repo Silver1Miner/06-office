@@ -16,10 +16,10 @@ __meta__ = {
 }
 
 [node name="to_hallway" parent="." instance=ExtResource( 4 )]
-margin_left = 240.645
-margin_top = 45.9871
-margin_right = 440.645
-margin_bottom = 65.9871
+margin_left = 240.0
+margin_top = 250.0
+margin_right = 440.0
+margin_bottom = 270.0
 
 [node name="Label" parent="to_hallway" index="1"]
 text = "Walk down hallway"

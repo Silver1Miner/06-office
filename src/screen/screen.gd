@@ -5,6 +5,7 @@ var current_computer = 0
 
 onready var email = $email
 onready var tasks = $tasks
+onready var date = $calendar
 onready var switch_command = $SwitchCommand
 
 var LEFT_LIMIT = 55
@@ -34,10 +35,11 @@ func _on_icon_pressed(identity: String) -> void:
 	match identity:
 		"MAIL":
 			email.visible = true
-			tasks.visible = false
 		"TASKS":
-			email.visible = false
 			tasks.visible = true
+		"DATE":
+			date.refresh()
+			date.visible = true
 
 func _process(_delta: float) -> void:
 	if active and get_global_mouse_position().x > LEFT_LIMIT \

@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ColorRect",
+"class": "Window",
+"language": "GDScript",
+"path": "res://src/screen/windows/window.gd"
+} ]
+_global_script_class_icons={
+"Window": ""
+}
+
 [application]
 
 config/name="The Day Job"

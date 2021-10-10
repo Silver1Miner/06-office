@@ -1,4 +1,5 @@
 extends ColorRect
+class_name Window
 
 onready var close = $close
 
