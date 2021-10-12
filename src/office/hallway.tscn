@@ -52,11 +52,11 @@ margin_right = -15.0
 margin_bottom = -106.0
 
 [node name="text" parent="Tooltip" index="0"]
-margin_left = 18.8591
-margin_top = 26.7659
-margin_right = 184.859
-margin_bottom = 77.7659
-text = "The Work Desks
+margin_left = 19.0
+margin_top = 27.0
+margin_right = 219.0
+margin_bottom = 88.0
+text = "The Right Side Work Desks
 No one else is here. That's weird."
 
 [node name="Tooltip2" parent="." instance=ExtResource( 5 )]
@@ -66,11 +66,11 @@ margin_right = -353.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip2" index="0"]
-margin_left = 8.18057
-margin_top = -18.3919
-margin_right = 195.181
-margin_bottom = 78.6081
-text = "The Work Desks
+margin_left = -41.5637
+margin_top = -17.0561
+margin_right = 162.436
+margin_bottom = 79.9439
+text = "The Left Side Work Desks
 My computer is over here.
 No one else is here though. That's weird."
 
