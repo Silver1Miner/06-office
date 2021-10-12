@@ -33,7 +33,7 @@ func _on_meter_full() -> void:
 	emit_signal("exit_screen")
 
 func _on_icon_pressed(identity: String) -> void:
-	print(identity + " icon pressed")
+	#print(identity + " icon pressed")
 	match identity:
 		"MAIL":
 			email.visible = true

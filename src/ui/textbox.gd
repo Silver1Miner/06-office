@@ -60,6 +60,6 @@ func _on_timer_timeout() -> void:
 
 func end_text() -> void:
 	get_tree().paused = false
-	visible = false
+	#visible = false
 	emit_signal("text_finished")
 

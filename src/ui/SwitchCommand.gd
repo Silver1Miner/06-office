@@ -11,9 +11,9 @@ func change_label(new_label) -> void:
 
 func _process(_delta: float) -> void:
 	if pressed:
-		if progress.value < 100:
+		if progress.value < 110:
 			progress.value += PlayerData.screen_switch_speed
-			if progress.value == 100:
+			if progress.value == 110:
 				#print("meter full")
 				emit_signal("meter_full")
 				pressed = false

@@ -12,18 +12,18 @@ func _ready() -> void:
 	$textbox.initialize({"0":{"text":"My work area"}})
 
 func _on_screen_enter() -> void:
-	yield(get_tree().create_timer(PlayerData.screen_wait_time), "timeout")
-	print("screen entered from work desks")
+	#print("screen entered from work desks")
 	screen.update_display()
+	$textbox.visible = false
 	screen.visible = true
 	screen.active = true
 
 func _on_screen_exit() -> void:
-	yield(get_tree().create_timer(PlayerData.screen_wait_time), "timeout")
-	print("screen exited")
+	#print("screen exited")
+	$textbox.visible = true
 	screen.active = false
 	screen.visible = false
 
 func _go_to_hallway() -> void:
-	if get_tree().change_scene(PlayerData.hallway_dir) != OK:
+	if get_tree().change_scene_to(PlayerData.hallway_dir) != OK:
 		push_error("fail to change scene to hallway")

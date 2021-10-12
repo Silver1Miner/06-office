@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme/screen.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/Tooltip.gd" type="Script" id=2]
+
+[node name="Tooltip" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -496.0
+margin_bottom = -281.0
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.156863 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="."]
+margin_left = 4.94974
+margin_top = 119.501
+margin_right = 145.95
+margin_bottom = 150.501
+mouse_filter = 2
+text = "Tooltip"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_Tooltip_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Tooltip_mouse_exited"]

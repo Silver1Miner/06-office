@@ -6,5 +6,5 @@ func _ready() -> void:
 	$textbox.initialize({"0":{"text":"The office lobby. Doubles as a kitchen."}})
 
 func _go_to_hallway() -> void:
-	if get_tree().change_scene(PlayerData.hallway_dir) != OK:
+	if get_tree().change_scene_to(PlayerData.hallway_dir) != OK:
 		push_error("fail to change scene")
