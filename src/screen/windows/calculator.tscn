@@ -1,0 +1,226 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/screen/windows/window.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/screen/windows/calculator.gd" type="Script" id=2]
+[ext_resource path="res://assets/theme/calculator.tres" type="Theme" id=3]
+[ext_resource path="res://assets/screen/icons/accessories-calculator.png" type="Texture" id=4]
+[ext_resource path="res://assets/theme/CourierPrime-Bold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 5 )
+
+[node name="calculator" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="icon" parent="." index="1"]
+texture = ExtResource( 4 )
+
+[node name="Label" parent="." index="2"]
+text = "CALCULATOR"
+
+[node name="Calculator" type="VBoxContainer" parent="." index="4"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -137.0
+margin_top = 50.0
+margin_right = 137.0
+margin_bottom = -25.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="LineEdit" parent="Calculator" index="0"]
+margin_right = 274.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 0, 30 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="Calculator" index="1"]
+margin_top = 42.0
+margin_right = 274.0
+margin_bottom = 46.0
+
+[node name="Pad" type="HBoxContainer" parent="Calculator" index="2"]
+margin_top = 50.0
+margin_right = 274.0
+margin_bottom = 226.0
+
+[node name="NumPad" type="GridContainer" parent="Calculator/Pad" index="0"]
+margin_right = 158.0
+margin_bottom = 176.0
+columns = 3
+
+[node name="Button" type="Button" parent="Calculator/Pad/NumPad" index="0"]
+margin_right = 50.0
+margin_bottom = 41.5457
+rect_min_size = Vector2( 50, 40 )
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Calculator/Pad/NumPad" index="1"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 41.5457
+rect_min_size = Vector2( 50, 0 )
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Calculator/Pad/NumPad" index="2"]
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 41.5457
+rect_min_size = Vector2( 50, 0 )
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Calculator/Pad/NumPad" index="3"]
+margin_top = 45.0
+margin_right = 50.0
+margin_bottom = 86.5457
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Calculator/Pad/NumPad" index="4"]
+margin_left = 54.0
+margin_top = 45.0
+margin_right = 104.0
+margin_bottom = 86.5457
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Calculator/Pad/NumPad" index="5"]
+margin_left = 108.0
+margin_top = 45.0
+margin_right = 158.0
+margin_bottom = 86.5457
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="Calculator/Pad/NumPad" index="6"]
+margin_top = 90.0
+margin_right = 50.0
+margin_bottom = 131.546
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="Calculator/Pad/NumPad" index="7"]
+margin_left = 54.0
+margin_top = 90.0
+margin_right = 104.0
+margin_bottom = 131.546
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button9" type="Button" parent="Calculator/Pad/NumPad" index="8"]
+margin_left = 108.0
+margin_top = 90.0
+margin_right = 158.0
+margin_bottom = 131.546
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button10" type="Button" parent="Calculator/Pad/NumPad" index="9"]
+margin_top = 135.0
+margin_right = 50.0
+margin_bottom = 176.546
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button11" type="Button" parent="Calculator/Pad/NumPad" index="10"]
+margin_left = 54.0
+margin_top = 135.0
+margin_right = 104.0
+margin_bottom = 176.546
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button12" type="Button" parent="Calculator/Pad/NumPad" index="11"]
+margin_left = 108.0
+margin_top = 135.0
+margin_right = 158.0
+margin_bottom = 176.546
+text = "."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="Calculator/Pad" index="1"]
+margin_left = 162.0
+margin_right = 166.0
+margin_bottom = 176.0
+
+[node name="OpPad" type="GridContainer" parent="Calculator/Pad" index="2"]
+margin_left = 170.0
+margin_right = 274.0
+margin_bottom = 176.0
+columns = 2
+
+[node name="Button" type="Button" parent="Calculator/Pad/OpPad" index="0"]
+margin_right = 50.0
+margin_bottom = 41.5457
+rect_min_size = Vector2( 50, 0 )
+text = "/"
+
+[node name="Button2" type="Button" parent="Calculator/Pad/OpPad" index="1"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 41.5457
+rect_min_size = Vector2( 50, 0 )
+text = "*"
+
+[node name="Button3" type="Button" parent="Calculator/Pad/OpPad" index="2"]
+margin_top = 45.0
+margin_right = 50.0
+margin_bottom = 86.5457
+text = "-"
+
+[node name="Button4" type="Button" parent="Calculator/Pad/OpPad" index="3"]
+margin_left = 54.0
+margin_top = 45.0
+margin_right = 104.0
+margin_bottom = 86.5457
+text = "+"
+
+[node name="Button5" type="Button" parent="Calculator/Pad/OpPad" index="4"]
+margin_top = 90.0
+margin_right = 50.0
+margin_bottom = 131.546
+text = "C"
+
+[node name="Button6" type="Button" parent="Calculator/Pad/OpPad" index="5"]
+margin_left = 54.0
+margin_top = 90.0
+margin_right = 104.0
+margin_bottom = 131.546
+text = "="
