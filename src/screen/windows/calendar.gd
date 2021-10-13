@@ -21,3 +21,7 @@ func refresh() -> void:
 		$Calendar/Weekday.text = "Stop checking the calendar"
 		$Calendar/Month.text = "AND GET BACK TO"
 		$Calendar/Date.text = "WORK"
+		yield(get_tree().create_timer(0.2), "timeout")
+		$Calendar/Weekday.text = weekdays[date["weekday"]]
+		$Calendar/Month.text = months[date["month"]-1]
+		$Calendar/Date.text = str(date["day"])
