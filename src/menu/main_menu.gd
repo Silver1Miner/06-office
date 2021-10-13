@@ -15,7 +15,8 @@ func _ready() -> void:
 		push_error("button connect fail")
 
 func _on_new_game_pressed() -> void:
-	if get_tree().change_scene("res://src/office/lobby.tscn") != OK:
+	PlayerData.current_level = 1
+	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:
 		push_error("failed to start game")
 
 func _on_settings_pressed() -> void:
