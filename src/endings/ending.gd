@@ -23,12 +23,18 @@ var intro_text = {
 	},
 }
 
+var intro_text_2 = {
+	"0": {}
+}
+
 var ending_1 = {
 	"0": {
 		"text":
 """GOOD ENDING
 
-Congratulations. This is the good ending.
+Congratulations on a hard day's work.
+
+Because of your loyal service, the company is proud to award you with a promotion.
 """
 	}
 }

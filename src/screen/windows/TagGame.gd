@@ -14,10 +14,10 @@ func _ready() -> void:
 	update_display(0)
 
 func _on_enter_pressed() -> void:
-	pass
+	update_display_random()
 
 func _on_cancel_pressed() -> void:
-	pass
+	tags.unselect_all()
 
 func update_display(i: int) -> void:
 	if displays[i]["image"] != "":
@@ -26,19 +26,22 @@ func update_display(i: int) -> void:
 	tags.clear()
 	for n in displays[i]["tags"]:
 		tags.add_item(n)
+	tags.unselect_all()
 
 func update_display_random() -> void:
-	pass
+	randomize()
+	var choice = rand_range(0, len(displays))
+	update_display(choice)
 
 var displays := {
 	0: {
-		"image": "",
-		"tags": ["SAD", "HAPPY"],
+		"image": "res://assets/tags/pexels-eva-elijas-5503384.jpg",
+		"tags": ["FOOD", "MEAT", "BEEF", "BLOOD"],
 		"text": "",
 	},
 	1: {
-		"image": "",
-		"tags": [],
+		"image": "res://assets/tags/combustion.jpg",
+		"tags": ["WATER", "BATH", "WASTE", "HAPPY"],
 		"text": "",
 	},
 }
