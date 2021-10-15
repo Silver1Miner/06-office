@@ -25,19 +25,19 @@ func num_pressed(button) -> void:
 	if Display.get_text().is_valid_float() and currentOp == "=":
 		currentOp = ""
 		randomize()
-		if rand_range(1, 10) < 9:
+		if rand_range(1, 20) < 19:
 			Display.set_text("0")
 		else:
 			Display.set_text("GET OUT")
-			yield(get_tree().create_timer(0.2), "timeout")
+			yield(get_tree().create_timer(0.1), "timeout")
 			Display.set_text("0")
 	if Display.get_text() == "0" and button.get_text() != '.':
 		randomize()
-		if rand_range(1, 10) < 9:
+		if rand_range(1, 20) < 19:
 			Display.set_text(button.get_text())
 		else:
 			Display.set_text("I SEE YOU")
-			yield(get_tree().create_timer(0.2), "timeout")
+			yield(get_tree().create_timer(0.1), "timeout")
 			Display.set_text(button.get_text())
 	elif Display.get_text().find(".") < 0 or button.get_text() != '.':
 		Display.set_text(Display.get_text() + button.get_text())
@@ -47,7 +47,7 @@ func op_pressed(button) -> void:
 		stored = 0
 		currentOp = ""
 		randomize()
-		if rand_range(1, 10) < 9:
+		if rand_range(1, 20) < 19:
 			Display.set_text("0")
 		else:
 			Display.set_text("GET BACK TO WORK")
@@ -60,11 +60,11 @@ func op_pressed(button) -> void:
 			Display.set_text(str(stored))
 		else:
 			randomize()
-			if rand_range(1, 10) < 9:
+			if rand_range(1, 20) < 19:
 				Display.set_text(button.get_text())
 			else:
 				Display.set_text("BEHIND YOU")
-				yield(get_tree().create_timer(0.2), "timeout")
+				yield(get_tree().create_timer(0.1), "timeout")
 				Display.set_text(button.get_text())
 
 func calculate():

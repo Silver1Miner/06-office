@@ -1,7 +1,7 @@
 extends Control
 
 signal text_finished
-var page := "0"
+var page := 0
 var text_playing = true
 onready var text = $text
 onready var timer = $Timer
@@ -14,21 +14,19 @@ func _ready() -> void:
 	#initialize(dialogue)
 	visible = false
 
-var dialogue = {
-	"0": {
-		"text": "This is a placeholder!"
-	},
-}
+var dialogue = [
+	"This is a placeholder!",
+]
 
 func initialize(scene) -> void:
 	visible = true
 	timer.start()
 	dialogue = scene
 	text_playing = true
-	page = "0"
+	page = 0
 	if not page in dialogue:
 		end_text()
-	text.set_bbcode(dialogue[page]["text"])
+	text.set_bbcode(dialogue[page])
 	text.set_visible_characters(0)
 	set_process_input(true)
 
@@ -36,8 +34,8 @@ func _on_next_pressed() -> void:
 	if text_playing:
 		if text.get_visible_characters() > text.get_total_character_count():
 			if int(page) < dialogue.size() - 1:
-				page = str(int(page) + 1)
-				text.set_bbcode(dialogue[page]["text"])
+				page += 1
+				text.set_bbcode(dialogue[page])
 				text.set_visible_characters(0)
 			elif int(page) >= dialogue.size() - 1:
 				end_text()

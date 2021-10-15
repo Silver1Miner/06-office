@@ -7,7 +7,7 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_office.connect("meter_full", self, "_go_to_office") != OK:
 		push_error("signal connect fail")
-	$textbox.initialize({"0":{"text":"The office hallway"}})
+	$textbox.initialize(["The office hallway"])
 
 func _go_to_desks() -> void:
 	if get_tree().change_scene_to(PlayerData.work_desks_dir) != OK:

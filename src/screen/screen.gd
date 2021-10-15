@@ -25,9 +25,6 @@ func _ready() -> void:
 		if icon.connect("icon_pressed", self, "_on_icon_pressed") != OK:
 			push_error("signal connect fail")
 
-func update_display() -> void:
-	$computer_number.text = "# " + str(current_computer)
-
 func _on_meter_full() -> void:
 	active = false
 	emit_signal("exit_screen")

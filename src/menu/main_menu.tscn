@@ -24,9 +24,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="settings" parent="." instance=ExtResource( 1 )]
-visible = false
-
 [node name="options" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,7 +33,7 @@ margin_left = -60.0
 margin_top = -55.5
 margin_right = 60.0
 margin_bottom = 55.5
-custom_constants/separation = 18
+custom_constants/separation = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,16 +45,16 @@ rect_min_size = Vector2( 120, 30 )
 text = "New Game"
 
 [node name="settings" type="Button" parent="options"]
-margin_top = 62.0
+margin_top = 76.0
 margin_right = 120.0
-margin_bottom = 106.21
+margin_bottom = 120.21
 rect_min_size = Vector2( 120, 30 )
 text = "Settings"
 
 [node name="quit" type="Button" parent="options"]
-margin_top = 124.0
+margin_top = 152.0
 margin_right = 120.0
-margin_bottom = 168.21
+margin_bottom = 196.21
 rect_min_size = Vector2( 120, 30 )
 text = "Quit"
 
@@ -84,3 +81,6 @@ text = "v0.0.1 Demo"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="settings" parent="." instance=ExtResource( 1 )]
+visible = false

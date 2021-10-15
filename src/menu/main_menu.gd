@@ -20,7 +20,7 @@ func _on_new_game_pressed() -> void:
 		push_error("failed to start game")
 
 func _on_settings_pressed() -> void:
-	print("settings pressed")
+	$settings.visible = true
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

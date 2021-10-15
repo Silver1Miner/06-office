@@ -6,6 +6,8 @@ onready var tags = $Panels/Display/ItemList
 onready var image = $Panels/Display/TextureRect
 onready var text = $Panels/Display/TextureRect/RichTextLabel
 
+var completed := 0
+
 func _ready() -> void:
 	if enter.connect("pressed", self, "_on_enter_pressed") != OK:
 		push_error("enter connect fail")
@@ -14,7 +16,9 @@ func _ready() -> void:
 	update_display(0)
 
 func _on_enter_pressed() -> void:
-	update_display_random()
+	completed += 1
+	if completed < 10:
+		update_display_random()
 
 func _on_cancel_pressed() -> void:
 	tags.unselect_all()
@@ -24,8 +28,9 @@ func update_display(i: int) -> void:
 		image.texture = load(displays[i]["image"])
 	text.bbcode_text = displays[i]["text"]
 	tags.clear()
-	for n in displays[i]["tags"]:
-		tags.add_item(n)
+	for n in len(displays[i]["tags"]):
+		tags.add_item(displays[i]["tags"][n])
+		tags.set_item_tooltip_enabled(n, false)
 	tags.unselect_all()
 
 func update_display_random() -> void:

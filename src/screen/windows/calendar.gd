@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func refresh() -> void:
 	randomize()
-	if rand_range(0, 9) < 8:
+	if rand_range(1, 20) < 19:
 		$Calendar/Weekday.text = weekdays[date["weekday"]]
 		$Calendar/Month.text = months[date["month"]-1]
 		$Calendar/Date.text = str(date["day"])

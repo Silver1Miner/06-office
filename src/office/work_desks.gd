@@ -9,11 +9,10 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if screen.connect("exit_screen", self, "_on_screen_exit") != OK:
 		push_error("signal connect fail")
-	$textbox.initialize({"0":{"text":"My work area"}})
+	$textbox.initialize(["My work area"])
 
 func _on_screen_enter() -> void:
 	#print("screen entered from work desks")
-	screen.update_display()
 	$textbox.visible = false
 	screen.visible = true
 	screen.active = true
