@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/office/damir-kopezhanov-luseu9GtYzM-unsplash.jpg" type="Texture" id=1]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/Tooltip.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/office/office.gd" type="Script" id=4]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=6]
 
 [node name="office" type="Control"]
 anchor_right = 1.0
@@ -47,11 +48,12 @@ margin_right = -203.0
 margin_bottom = -244.0
 
 [node name="text" parent="Tooltip" index="0"]
-margin_left = -7.5
+margin_left = -7.0
 margin_top = -40.0
-margin_right = 238.5
-margin_bottom = 31.0
-text = "The Manager's trophy shelf. They're arranged differently from yesterday. Does he rearrange them every day for fun?"
+margin_right = 239.0
+margin_bottom = 40.0
+text = "The Manager's trophy shelf. They're arranged slightly differently from yesterday. Does he rearrange them every day for fun? Or just touches them?"
+fit_content_height = true
 
 [node name="Tooltip2" parent="." instance=ExtResource( 3 )]
 margin_left = 175.0
@@ -67,6 +69,9 @@ margin_bottom = 71.0
 text = "The Manager's computer. Better not walk in view of its webcam."
 
 [node name="textbox" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Pause" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [editable path="to_hallway"]

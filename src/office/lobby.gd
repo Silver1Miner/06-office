@@ -8,3 +8,4 @@ func _ready() -> void:
 func _go_to_hallway() -> void:
 	if get_tree().change_scene_to(PlayerData.hallway_dir) != OK:
 		push_error("fail to change scene")
+	

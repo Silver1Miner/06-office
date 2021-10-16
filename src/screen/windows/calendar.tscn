@@ -19,7 +19,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 144
+size = 81
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
@@ -43,38 +43,47 @@ __meta__ = {
 
 [node name="Today is" type="Label" parent="Calendar" index="0"]
 margin_right = 529.0
-margin_bottom = 51.0
+margin_bottom = 33.0
 text = "
-Today is:
-"
+TODAY IS"
 align = 1
 valign = 1
 
 [node name="Weekday" type="Label" parent="Calendar" index="1"]
-margin_top = 55.0
+margin_top = 37.0
 margin_right = 529.0
-margin_bottom = 83.0
+margin_bottom = 65.0
 custom_fonts/font = SubResource( 1 )
 text = "FRIDAY"
 align = 1
 
 [node name="Month" type="Label" parent="Calendar" index="2"]
-margin_top = 87.0
+margin_top = 69.0
 margin_right = 529.0
-margin_bottom = 123.0
+margin_bottom = 105.0
 custom_fonts/font = SubResource( 2 )
 text = "January"
 align = 1
 
 [node name="Date" type="Label" parent="Calendar" index="3"]
-margin_top = 127.0
+margin_top = 109.0
 margin_right = 529.0
-margin_bottom = 290.0
+margin_bottom = 201.0
 custom_fonts/font = SubResource( 3 )
 text = "1"
 align = 1
 
-[node name="Control" type="Control" parent="Calendar" index="4"]
-margin_top = 294.0
+[node name="OfTheDay" type="Label" parent="Calendar" index="4"]
+margin_top = 205.0
 margin_right = 529.0
-margin_bottom = 294.0
+margin_bottom = 220.0
+text = "QUOTE OF THE DAY"
+align = 1
+
+[node name="Quote" type="Label" parent="Calendar" index="5"]
+margin_top = 224.0
+margin_right = 529.0
+margin_bottom = 239.0
+text = "When you wish upon a star..."
+align = 1
+valign = 1

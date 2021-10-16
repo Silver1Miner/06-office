@@ -16,7 +16,7 @@ var TOP_LIMIT = 55
 var BOTTOM_LIMIT = 340
 var capture_mouse := true
 var arrow = load("res://assets/screen/click-32.png")
-signal exit_screen
+#signal exit_screen
 
 func _ready() -> void:
 	if switch_command.connect("meter_full", self, "_on_meter_full") != OK:
@@ -27,7 +27,10 @@ func _ready() -> void:
 
 func _on_meter_full() -> void:
 	active = false
-	emit_signal("exit_screen")
+	#emit_signal("exit_screen")
+	if get_tree().change_scene_to(PlayerData.work_desks_dir) != OK:
+		push_error("fail to change scene to work desks")
+	
 
 func _on_icon_pressed(identity: String) -> void:
 	#print(identity + " icon pressed")

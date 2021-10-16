@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/office/nrd-c3tNiAb098I-unsplash.jpg" type="Texture" id=1]
 [ext_resource path="res://src/office/hallway.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/ui/Tooltip.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=6]
 
 [node name="hallway" type="TextureRect"]
 anchor_right = 1.0
@@ -88,6 +89,9 @@ margin_bottom = 3.0
 text = "The Manager's Office is down here"
 
 [node name="textbox" parent="." instance=ExtResource( 4 )]
+
+[node name="Pause" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [editable path="to_work_desks"]
 [editable path="to_lobby"]
