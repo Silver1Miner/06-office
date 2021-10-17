@@ -82,10 +82,10 @@ margin_right = -286.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip3" index="0"]
-margin_left = -17.0
-margin_top = -30.0
-margin_right = 138.0
-margin_bottom = 3.0
+margin_left = -35.8775
+margin_top = -28.1122
+margin_right = 119.122
+margin_bottom = 4.88776
 text = "The Manager's Office is down here"
 
 [node name="textbox" parent="." instance=ExtResource( 4 )]

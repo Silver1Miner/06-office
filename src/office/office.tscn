@@ -53,7 +53,6 @@ margin_top = -40.0
 margin_right = 239.0
 margin_bottom = 40.0
 text = "The Manager's trophy shelf. They're arranged slightly differently from yesterday. Does he rearrange them every day for fun? Or just touches them?"
-fit_content_height = true
 
 [node name="Tooltip2" parent="." instance=ExtResource( 3 )]
 margin_left = 175.0
@@ -66,7 +65,7 @@ margin_left = -141.0
 margin_top = 4.0
 margin_right = 30.0
 margin_bottom = 71.0
-text = "The Manager's computer. Better not walk in view of its webcam."
+text = "The Manager's computer monistor. It's not actually connected to anything and completely for show. What does the manager even do?"
 
 [node name="textbox" parent="." instance=ExtResource( 5 )]
 visible = false

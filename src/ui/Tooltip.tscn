@@ -9,19 +9,20 @@ anchor_bottom = 1.0
 margin_right = -496.0
 margin_bottom = -281.0
 theme = ExtResource( 1 )
-color = Color( 0, 0, 0, 0.156863 )
+color = Color( 0, 0, 0, 0.235294 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="text" type="RichTextLabel" parent="."]
+[node name="text" type="Label" parent="."]
 margin_left = 4.94974
 margin_top = 119.501
 margin_right = 145.95
 margin_bottom = 150.501
-mouse_filter = 2
 text = "Tooltip"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

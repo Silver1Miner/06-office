@@ -9,6 +9,7 @@ func _ready() -> void:
 		next_level = "res://src/office/lobby.tscn"
 		textbox.initialize(intro_text)
 	else:
+		next_level = "res://src/menu/main_menu.tscn"
 		match PlayerData.ending:
 			0:
 				textbox.initialize(good_ending)
@@ -55,13 +56,16 @@ We thank you for your service.""",
 var bad_ending = [
 """BAD ENDING
 
-Employee #[%employee_nomber],
+Employee,
 
-We have detected attempts to access unauthorized areas. This is in violation of your employment agreemnent.
+We have detected unauthorized activity in violation of your employment agreemnent.
 
-Consequently, your employment is hearby terminated, effective immediately.
+Consequently, you will be subject to the following disciplinary actions:
+Demotion of rank
+Reduction of salary
+Additional Monetary Penalties to be removed from your paycheck.
 
-Company security will arrive shortly to remove your soul from the premises.""",
+Any additional unauthorized activity will result in increasingly severe penalties. You have been warned.""",
 ]
 
 var true_ending = [
