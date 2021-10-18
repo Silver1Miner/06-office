@@ -11,5 +11,5 @@ text = "MAIL"
 [node name="EmailGame" parent="." index="4" instance=ExtResource( 2 )]
 
 [editable path="EmailGame"]
-[editable path="EmailGame/mail_content/HBoxContainer/reply"]
-[editable path="EmailGame/mail_content/HBoxContainer/forward"]
+[editable path="EmailGame/mail_content/NinePatchRect/HBoxContainer/reply"]
+[editable path="EmailGame/mail_content/NinePatchRect/HBoxContainer/forward"]

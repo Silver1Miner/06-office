@@ -45,8 +45,18 @@ var displays := {
 		"text": "",
 	},
 	1: {
-		"image": "res://assets/tags/combustion.jpg",
-		"tags": ["WATER", "BATH", "WASTE", "HAPPY"],
+		"image": "res://assets/tags/pexels-cottonbro-5553772.jpg",
+		"tags": ["DELICIOUS", "HAPPY", "JOYOUS", "SEEING"],
+		"text": "",
+	},
+	2: {
+		"image": "res://assets/tags/pexels-azra-tuba-demir-7806416.jpg",
+		"tags": ["PACKAGE", "SOFT", "HEAVY", "BREATHE"],
+		"text": "",
+	},
+	3: {
+		"image": "res://assets/tags/pexels-jimmy-chan-2454796.jpg",
+		"tags": ["INDUSTRY", "GREEN", "CHARGE", "CHILL"],
 		"text": "",
 	},
 }

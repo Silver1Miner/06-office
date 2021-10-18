@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/office/nrd-c3tNiAb098I-unsplash.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/office/hallway.jpg" type="Texture" id=1]
 [ext_resource path="res://src/office/hallway.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=4]
@@ -53,10 +53,10 @@ margin_right = -15.0
 margin_bottom = -106.0
 
 [node name="text" parent="Tooltip" index="0"]
-margin_left = 19.0
-margin_top = 27.0
-margin_right = 219.0
-margin_bottom = 88.0
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 2.0
 text = "The Right Side Work Desks
 No one else is here. That's weird."
 
@@ -67,10 +67,8 @@ margin_right = -353.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip2" index="0"]
-margin_left = -41.5637
-margin_top = -17.0561
-margin_right = 162.436
-margin_bottom = 79.9439
+margin_top = -2.0
+margin_right = -39.0
 text = "The Left Side Work Desks
 My computer is over here.
 No one else is here though. That's weird."
@@ -82,10 +80,10 @@ margin_right = -286.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip3" index="0"]
-margin_left = -35.8775
-margin_top = -28.1122
-margin_right = 119.122
-margin_bottom = 4.88776
+margin_left = -14.75
+margin_top = -1.0434
+margin_right = 15.25
+margin_bottom = 31.9566
 text = "The Manager's Office is down here"
 
 [node name="textbox" parent="." instance=ExtResource( 4 )]
