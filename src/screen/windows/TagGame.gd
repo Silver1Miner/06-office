@@ -5,6 +5,7 @@ onready var cancel = $Panels/Options/Cancel
 onready var tags = $Panels/Display/ItemList
 onready var image = $Panels/Display/TextureRect
 onready var text = $Panels/Display/TextureRect/RichTextLabel
+onready var progress = $Panels/Options/Progress
 
 var completed := 0
 
@@ -14,9 +15,14 @@ func _ready() -> void:
 	if cancel.connect("pressed", self, "_on_cancel_pressed") != OK:
 		push_error("cancel connect fail")
 	update_display(0)
+	progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
 
 func _on_enter_pressed() -> void:
-	completed += 1
+	PlayerData.tags_completed += 1
+	if PlayerData.tags_completed >= 6:
+		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
+	else:
+		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
 	if completed < 10:
 		update_display_random()
 

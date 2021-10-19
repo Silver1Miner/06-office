@@ -12,7 +12,7 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	#if screen.connect("exit_screen", self, "_on_screen_exit") != OK:
 	#	push_error("signal connect fail")
-	$textbox.initialize(["My work area"])
+	$textbox.initialize(["My work area. Where is everybody?"])
 
 func select_background() -> void:
 	randomize()

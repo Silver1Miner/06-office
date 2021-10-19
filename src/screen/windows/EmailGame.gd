@@ -31,7 +31,7 @@ func _on_mail_headings_item_selected(index: int) -> void:
 var emails := [
 {"title": "ANNOUNCEMENTS TO ALL EMPLOYEES", #0
 "from": "Human Resources",
-"text": """1. From now on, Employees are required to wear their Augumented Reality (AR) glasses at all times. Failure to wear your AR will lead to disciplinary action up to termination of employment.
+"text": """1. From now on, Employees are required to wear their Augumented Reality (AR) glasses at all times. Failure to wear your AR will lead to disciplinary action up to termination.
 
 2. Following the massive success of the removal of the 'New Message' option from email clients for employees ranked level 16 and below, we have implementated a new AI control system on Email reply and forward privileges. Starting today, if the AI judges that you do not need to reply to or forward a message, clicking on the reply and forward buttons will have no result.
 

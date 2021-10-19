@@ -24,7 +24,7 @@ func initialize(scene) -> void:
 	dialogue = scene
 	text_playing = true
 	page = 0
-	if not page in dialogue:
+	if page > len(dialogue):
 		end_text()
 	text.set_bbcode(dialogue[page])
 	text.set_visible_characters(0)
@@ -41,6 +41,7 @@ func _on_next_pressed() -> void:
 				end_text()
 		else:
 			text.set_visible_characters(text.get_total_character_count())
+			end_text()
 
 func _on_skip_pressed() -> void:
 	if text_playing:
@@ -55,9 +56,11 @@ func _input(event) -> void:
 
 func _on_timer_timeout() -> void:
 	text.set_visible_characters(text.get_visible_characters()+1)
+	if text.get_visible_characters() >= text.get_total_character_count():
+		end_text()
 
 func end_text() -> void:
-	get_tree().paused = false
+	#get_tree().paused = false
 	#visible = false
 	emit_signal("text_finished")
 
