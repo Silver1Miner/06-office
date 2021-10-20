@@ -79,6 +79,10 @@ text = "Turn Around"
 [node name="Pause" parent="." instance=ExtResource( 7 )]
 visible = false
 
+[node name="footsteps" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 617.915, 369.29 )
+bus = "Sound"
+
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
 [editable path="to_hallway"]

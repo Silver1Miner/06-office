@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="The Day Job"
+config/name="The Gas Light"
 run/main_scene="res://src/menu/main_menu.tscn"
 boot_splash/image="res://assets/office-main-menu.png"
 config/icon="res://icon.png"

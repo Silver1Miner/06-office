@@ -5,6 +5,7 @@ onready var settings = $options/settings
 onready var quit = $options/quit
 
 func _ready() -> void:
+	Music.play_track(0)
 	if OS.get_name() == "HTML5":
 		quit.visible = false
 	if new_game.connect("pressed", self, "_on_new_game_pressed") != OK:
@@ -17,6 +18,7 @@ func _ready() -> void:
 func _on_new_game_pressed() -> void:
 	PlayerData.current_level = 0
 	PlayerData.tags_completed = 0
+	Music.play_track(1)
 	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:
 		push_error("failed to start game")
 

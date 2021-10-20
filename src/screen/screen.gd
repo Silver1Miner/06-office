@@ -19,6 +19,8 @@ var arrow = load("res://assets/screen/click-32.png")
 #signal exit_screen
 
 func _ready() -> void:
+	$Timer.wait_time = rand_range(1, 120)
+	$Timer.start()
 	if switch_command.connect("meter_full", self, "_on_meter_full") != OK:
 		push_error("switch connect fail")
 	for icon in $screen.get_children():
@@ -28,6 +30,7 @@ func _ready() -> void:
 func _on_meter_full() -> void:
 	active = false
 	#emit_signal("exit_screen")
+	Music.play_effect(1)
 	if get_tree().change_scene_to(PlayerData.work_desks_dir) != OK:
 		push_error("fail to change scene to work desks")
 	
@@ -57,3 +60,7 @@ func _process(_delta: float) -> void:
 			Vector2(16, 16))
 	else:
 		Input.set_custom_mouse_cursor(null)
+
+
+func _on_Timer_timeout() -> void:
+	Music.play_effect(5)

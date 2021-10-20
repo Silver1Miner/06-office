@@ -14,5 +14,7 @@ func select_background() -> void:
 	randomize()
 	if rand_range(1,10) < 9:
 		texture = load("res://assets/office/bathroom.jpg")
+		$gnome.visible = false
 	else:
 		texture = load("res://assets/office/bathroom2.jpg")
+		$gnome.visible = true

@@ -30,6 +30,7 @@ func _on_screen_enter() -> void:
 	#$textbox.visible = false
 	#screen.visible = true
 	#screen.active = true
+	Music.play_effect(0)
 	if get_tree().change_scene_to(PlayerData.screen) != OK:
 		push_error("fail to change scene to screen")
 

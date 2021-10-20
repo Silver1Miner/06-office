@@ -96,7 +96,7 @@ margin_left = 0.471939
 margin_top = -0.471939
 margin_right = 0.471939
 margin_bottom = -0.471939
-text = "Turn Around"
+text = "Turn Around to Exit"
 
 [node name="to_restroom" parent="." instance=ExtResource( 4 )]
 margin_left = 2.56139

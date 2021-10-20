@@ -8,4 +8,5 @@ func _ready() -> void:
 		push_error("close button connect fail")
 
 func _on_close() -> void:
+	Music.play_effect(2)
 	visible = false

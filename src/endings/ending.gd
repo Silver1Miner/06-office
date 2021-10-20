@@ -44,9 +44,11 @@ func _on_Next_pressed() -> void:
 var intro_text = [
 """Well, it's time for another day at work.
 										   
-I don't remember how long I've had this job.
+I don't remember how long I've had this job. All the days just end up feeling the same.
 										  
-All the days just end up feeling the same.
+It's a simple office job. Go in. Go to my computer. Do the TASKS I've been assigned. Get out.
+										  
+Easy, right?
 """,
 ]
 

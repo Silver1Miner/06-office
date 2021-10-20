@@ -20,6 +20,7 @@ func _ready() -> void:
 		push_error("timer connect fail")
 
 func _on_pressed() -> void:
+	Music.play_effect(2)
 	emit_signal("icon_pressed", identity)
 	#if first_press:
 	#	emit_signal("icon_pressed", identity)
