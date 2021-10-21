@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/office/bulletin.gd" type="Script" id=5]
 [ext_resource path="res://assets/theme/screen.tres" type="Theme" id=6]
 [ext_resource path="res://assets/gnome.png" type="Texture" id=7]
+[ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=8]
 
 [node name="bulletin" type="TextureRect"]
 anchor_right = 1.0
@@ -21,6 +22,8 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

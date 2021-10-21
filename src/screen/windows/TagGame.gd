@@ -6,15 +6,15 @@ onready var tags = $Panels/Display/ItemList
 onready var image = $Panels/Display/TextureRect
 onready var text = $Panels/Display/TextureRect/RichTextLabel
 onready var progress = $Panels/Options/Progress
-
-var completed := 0
+var current = 0
 
 func _ready() -> void:
 	if enter.connect("pressed", self, "_on_enter_pressed") != OK:
 		push_error("enter connect fail")
 	if cancel.connect("pressed", self, "_on_cancel_pressed") != OK:
 		push_error("cancel connect fail")
-	update_display(0)
+	displays.shuffle()
+	update_display(current)
 	progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
 
 func _on_enter_pressed() -> void:
@@ -23,8 +23,10 @@ func _on_enter_pressed() -> void:
 		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
 	else:
 		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
-	if completed < 10:
-		update_display_random()
+	current += 1
+	if current >= len(displays):
+		current = 0
+	update_display(current)
 
 func _on_cancel_pressed() -> void:
 	tags.unselect_all()
@@ -32,37 +34,95 @@ func _on_cancel_pressed() -> void:
 func update_display(i: int) -> void:
 	if displays[i]["image"] != "":
 		image.texture = load(displays[i]["image"])
-	text.bbcode_text = displays[i]["text"]
+	#text.bbcode_text = displays[i]["text"]
 	tags.clear()
-	for n in len(displays[i]["tags"]):
-		tags.add_item(displays[i]["tags"][n])
+	var display_tags = displays[i]["tags"]
+	display_tags.shuffle()
+	for n in len(display_tags):
+		tags.add_item(display_tags[n])
 		tags.set_item_tooltip_enabled(n, false)
 	tags.unselect_all()
+	if rand_range(0,2) > 1:
+		Music.play_effect(0)
+	else:
+		Music.play_effect(1)
 
-func update_display_random() -> void:
-	randomize()
-	var choice = rand_range(0, len(displays))
-	update_display(choice)
-
-var displays := {
-	0: {
-		"image": "res://assets/tags/pexels-eva-elijas-5503384.jpg",
-		"tags": ["FOOD", "MEAT", "BEEF", "BLOOD"],
-		"text": "",
+var displays := [
+	{
+		"image": "res://assets/tags/adrian-infernus--RJQvBkNHD0-unsplash.jpg",
+		"tags": ["FAT", "HAPPY", "CUDDLY", "CUTE"],
 	},
-	1: {
-		"image": "res://assets/tags/pexels-cottonbro-5553772.jpg",
-		"tags": ["DELICIOUS", "HAPPY", "JOYOUS", "SEEING"],
-		"text": "",
+	{
+		"image": "res://assets/tags/engin-akyurt-vYqAHQNaOis-unsplash.jpg",
+		"tags": ["FRIENDLY", "SMILE", "LAUGH", "SILENCE"],
 	},
-	2: {
+	{
+		"image": "res://assets/tags/glen-carrie-0Pweky1qfMQ-unsplash.jpg",
+		"tags": ["RED", "SLOW", "SHORT", "LONG"],
+	},
+	{
+		"image": "res://assets/tags/honey-yanibel-minaya-cruz-6ismmbSNpiE-unsplash.jpg",
+		"tags": ["HONEY", "SWARM", "MULTITUDE", "CRAWL"],
+	},
+	{
+		"image": "res://assets/tags/james-wainscoat-LQbaexQ2ykk-unsplash.jpg",
+		"tags": ["APPLE", "EVE", "GOD", "PARADISE"],
+	},
+	{
+		"image": "res://assets/tags/julian-gobel-Geu9kXvorzA-unsplash.jpg",
+		"tags": ["COMFORT","HOME","SILK","MOISTURIZED"],
+	},
+	{
+		"image": "res://assets/tags/kyle-mackie-Xedxbjx7MFg-unsplash.jpg",
+		"tags": ["MEAT", "MACHINE", "PIG", "BLOOD"],
+	},
+	{
+		"image": "res://assets/tags/maria-teneva-vf4O1OwtPnk-unsplash.jpg",
+		"tags": ["APPETIZING", "INTELLIGENT", "GRAVITY", "ORBIT"],
+	},
+	{
+		"image": "res://assets/tags/molly-blackbird-WvXPoIKsmOM-unsplash.jpg",
+		"tags": ["DEMON", "HUNGRY", "SMILE", "COLORFUL"],
+	},
+	{
+		"image": "res://assets/tags/nick-windsor-uzgIVF4F2ho-unsplash.jpg",
+		"tags": ["INNOCENT", "SONIC", "SQUIRM", "EAT"],
+	},
+	{
 		"image": "res://assets/tags/pexels-azra-tuba-demir-7806416.jpg",
-		"tags": ["PACKAGE", "SOFT", "HEAVY", "BREATHE"],
-		"text": "",
+		"tags": ["CELEBRATE", "PRESENT", "FUN", "OXYGEN"],
 	},
-	3: {
+	{
+		"image": "res://assets/tags/pexels-cottonbro-5553772.jpg",
+		"tags": ["I", "SEE", "EVERYTHING", "EAT"],
+	},
+	{
+		"image": "res://assets/tags/pexels-eva-elijas-5503384.jpg",
+		"tags": ["SPROUT", "NEWTON", "CRAWL", "ANTMAN"],
+	},
+	{
 		"image": "res://assets/tags/pexels-jimmy-chan-2454796.jpg",
-		"tags": ["INDUSTRY", "GREEN", "CHARGE", "CHILL"],
-		"text": "",
+		"tags": ["GIANT", "GRASSHOPPER", "WINTER", "SEED"],
 	},
-}
+	{
+		"image": "res://assets/tags/sheri-silver-OkDURDz8CxU-unsplash.jpg",
+		"tags": ["SUGAR", "WATCHING", "STARE", "SWEET"],
+	},
+	{
+		"image": "res://assets/tags/stefano-pollio-ZC0EbdLC8G0-unsplash.jpg",
+		"tags": ["FREE", "ME", "FROM", "STRIFE"],
+	},
+	{
+		"image": "res://assets/tags/tomasz-sroka-RP0NT9Hd2qY-unsplash.jpg",
+		"tags": ["PARTY", "HARD", "DRINK", "ALL"],
+	},
+]
+
+var warnings := """No one else is here you know
+Don't ignore me
+No one else is here
+No one else is here
+No one else is here
+No one else is here
+I know you can understand me
+No one else is here"""

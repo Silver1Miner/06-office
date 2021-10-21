@@ -45,14 +45,6 @@ margin_left = -140.0
 margin_top = -70.0
 margin_right = 140.0
 margin_bottom = 70.0
-text = "No one else is here you know
-Don't ignore me
-No one else is here
-No one else is here
-No one else is here
-No one else is here
-I know you can understand me
-No one else is here"
 __meta__ = {
 "_edit_use_anchors_": false
 }
