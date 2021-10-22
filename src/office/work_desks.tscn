@@ -77,6 +77,15 @@ margin_bottom = -30.0
 [node name="Label" parent="to_bulletin" index="1"]
 text = "Turn Around"
 
+[node name="hack_computer" parent="." instance=ExtResource( 2 )]
+margin_left = 7.84162
+margin_top = 296.265
+margin_right = 207.842
+margin_bottom = 316.265
+
+[node name="Label" parent="hack_computer" index="1"]
+text = "Hack Computer (BAD IDEA)"
+
 [node name="textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="Pause" parent="." instance=ExtResource( 7 )]
@@ -91,3 +100,4 @@ bus = "Sound"
 [editable path="to_hallway"]
 [editable path="to_computer"]
 [editable path="to_bulletin"]
+[editable path="hack_computer"]

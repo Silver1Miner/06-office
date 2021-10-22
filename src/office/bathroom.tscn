@@ -5,7 +5,7 @@
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/office/bathroom2.jpg" type="Texture" id=4]
 [ext_resource path="res://src/office/bathroom.gd" type="Script" id=5]
-[ext_resource path="res://assets/gnome.png" type="Texture" id=6]
+[ext_resource path="res://assets/items/gnome.png" type="Texture" id=6]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=7]
 
 [node name="bathroom" type="TextureRect"]
@@ -32,6 +32,15 @@ margin_bottom = 350.073
 [node name="Label" parent="to_lobby" index="1"]
 text = "Exit to Lobby"
 
+[node name="get_finger" parent="." instance=ExtResource( 1 )]
+margin_left = 32.5
+margin_top = 260.073
+margin_right = 232.5
+margin_bottom = 280.073
+
+[node name="Label" parent="get_finger" index="1"]
+text = "Take Thing in Urinal"
+
 [node name="textbox" parent="." instance=ExtResource( 2 )]
 
 [node name="Pause" parent="." instance=ExtResource( 3 )]
@@ -45,3 +54,4 @@ texture = ExtResource( 6 )
 flip_h = true
 
 [editable path="to_lobby"]
+[editable path="get_finger"]

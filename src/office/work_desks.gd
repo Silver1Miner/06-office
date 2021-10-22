@@ -10,6 +10,12 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_bulletin.connect("meter_full", self, "_go_to_bulletin") != OK:
 		push_error("signal connect fail")
+	if $hack_computer.connect("meter_full", self, "_hack_computer") != OK:
+		push_error("signal connect fail")
+	if PlayerData.has_finger:
+		$hack_computer.visible = true
+	else:
+		$hack_computer.visible = false
 	#if screen.connect("exit_screen", self, "_on_screen_exit") != OK:
 	#	push_error("signal connect fail")
 	$textbox.initialize(["My work area. Where is everybody?"])
@@ -47,3 +53,8 @@ func _go_to_hallway() -> void:
 func _go_to_bulletin() -> void:
 	if get_tree().change_scene_to(PlayerData.bulletin_dir) != OK:
 		push_error("fail to change scene to bulletin")
+
+func _hack_computer() -> void:
+	PlayerData.ending = 3
+	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:
+		push_error("fail to change scene to ending")

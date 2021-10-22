@@ -12,11 +12,11 @@ func _ready() -> void:
 	if ending_test > 0:
 		next_level = "res://src/menu/main_menu.tscn"
 		match ending_test:
-			1: textbox.initialize(augmented_reality)
+			1: textbox.initialize(casserole)
 			2: textbox.initialize(hallucination)
-			3: textbox.initialize(good_ending)
-			4: textbox.initialize(bad_ending)
-			5: textbox.initialize(curse)
+			3: textbox.initialize(promotion)
+			4: textbox.initialize(demotion)
+			5: textbox.initialize(hacker)
 			6: textbox.initialize(true_ending)
 	elif PlayerData.current_level == 0:
 		next_level = "res://src/office/lobby.tscn"
@@ -26,13 +26,15 @@ func _ready() -> void:
 		if PlayerData.ending > 0:
 			match PlayerData.ending:
 				1:
-					textbox.initialize(augmented_reality)
+					textbox.initialize(casserole)
 				2:
 					textbox.initialize(hallucination)
+				3:
+					hacker_ending()
 		elif PlayerData.tags_completed >= 6:
-			textbox.initialize(good_ending)
+			textbox.initialize(promotion)
 		else:
-			textbox.initialize(bad_ending)
+			textbox.initialize(demotion)
 
 func _on_text_finished() -> void:
 	$Next.visible = true
@@ -41,43 +43,41 @@ func _on_Next_pressed() -> void:
 	if get_tree().change_scene(next_level) != OK:
 		push_error("fail to change scene")
 
+func hacker_ending() -> void:
+	textbox.initialize(hacker)
+
 var intro_text = [
-"""Well, it's time for another day at work.
+"""Another day at work.
 										   
 I don't remember how long I've had this job. All the days just end up feeling the same.
 										  
-It's a simple office job. Go in. Go to my computer. Do the TASKS I've been assigned. Get out.
+Last time anything different happened was when they replaced the electric lights with gas lights. But it's been so long ago I don't even remember how long it's been.
 										  
-Easy, right?
-""",
+Such a monotonous office job. Go in. Go to my computer. Do the tasks I've been assigned. Go out.
+Day in, day out, clock in, clock out.
+										  
+Sometimes, I just wish something unexpected would happen."""
 ]
 
-var intro_text_new = [
-"""Well, it's time for another day at work.
-										   
-I don't remember how long I've had this job. It's a simple one I guess. Pays the bills.
-										  
-But all the days just end up feeling the same. Day in, day out, clock in, clock out.
-										  
-Sometimes, I just wish something unexpected would happen.""",
-]
-
-var good_ending = [
+var promotion = [
 """GOOD ENDING
 
 Employee,
 										  
-Congratulations on a hard day's work.
+Congratulations on a hard day's work. We applaud your dedication to your work despite the disappearance of your coworkers.
 										  
 In recognition of your good work, the company is proud to award you with a promotion.
 										  
-We appreciate you taking on more responsibilities without any increase in salary.
+The new responsibilities in your promoted role include:
+Completing the work assignments of your missing co-workers.
+										
+We appreciate you taking on these additional responsibilities without any increase in salary.
 										  
-We thank you for your service.""",
+See you in the office tomorrow.""",
 ]
 
-var bad_ending = [
-"""BAD ENDING
+var demotion = [
+"""POOR ENDING
 
 Employee,
 										  
@@ -86,35 +86,62 @@ We have detected unauthorized activity in violation of your employment agreemnen
 Consequently, you will be subject to the following disciplinary actions:
 Demotion of rank
 Reduction of salary
-Additional Monetary Penalties to be deducted from your paycheck.
+Additional Monetary Penalties to be deducted from your paycheck
+Revocation of Office Safety Privileges
 										  
-Any additional unauthorized activity will result in increasingly severe penalties. You have been warned.""",
+Any additional unauthorized activity will result in increasingly severe penalties. You have been warned.
+										  
+See you in the office tomorrow.""",
 ]
 
-var augmented_reality = [
-"""AR ENDING
+var casserole = [
+"""BEST ENDING
 
-To All Employees,
+Employee,
 										  
-Under law, we are required to inform you that we may attempt to inform you of possible malfunctions with your Augmented Reality (AR) equipment.
+I know you took my casserole.
 										  
-We thank you for your service.""",
+Forgot to take off your AR glasses while stealing it, huh? All those audio-visual glitches didn't tip you off that you were still wearing them?
+										
+Or did you perhaps think all those glitches you were seeing/hearing were all real?
+										
+Well, they will be real soon enough.
+Thieves go to the eighth circle of hell.
+										
+See you in the office tomorrow.""",
 ]
 
 var hallucination = [
-"""HALLUCINATION ENDING
+"""STANDARD ENDING
 
 To All Employees,
 										
-Regulations require us to report that our research scientists have retracted their previous announcment of no significant detection of hallucinatory side-effects of consuming company-provided energy drinks.
+Our research scientists have retracted their previous announcment of no significant detection of hallucinatory side-effects of consuming company-provided energy drinks.
 										
-Additionally, we would like to remind all employees that unauthorized communication with press and media is against your employment agreement. Refer all inquiries to the official Public Relations department.
+Additionally, recent reports of:
+Missing employees
+Discovery of severed body parts in company restrooms
+Appearing and disappearing gnomes
+are entirely due to the hallucinatory side-effects of the energy drinks.
 										
-We thank you for your service."""]
+The office is completely safe and poses absolutely no danger to employees.
+										
+See you in the office tomorrow."""]
 
-var curse = [
-"""
-"""]
+var hacker = [
+"""BAD ENDING
+
+Employee,
+										  
+We have detected serious unauthorized activity in violation of your employment agreemnent:
+Attempting to access company computational resources to which you have not been assigned.
+										  
+Due to the severity of this violation, you are hereby terminated, effective immediately.
+										
+Security personnel are already at your location and will now terminate you. 
+										
+Goodbye.""",
+]
 
 var true_ending = [
 """TRUE ENDING

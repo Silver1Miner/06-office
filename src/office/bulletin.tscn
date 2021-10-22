@@ -6,7 +6,7 @@
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/office/bulletin.gd" type="Script" id=5]
 [ext_resource path="res://assets/theme/screen.tres" type="Theme" id=6]
-[ext_resource path="res://assets/gnome.png" type="Texture" id=7]
+[ext_resource path="res://assets/items/gnome.png" type="Texture" id=7]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=8]
 
 [node name="bulletin" type="TextureRect"]
