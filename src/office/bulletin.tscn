@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=2]
@@ -8,6 +8,21 @@
 [ext_resource path="res://assets/theme/screen.tres" type="Theme" id=6]
 [ext_resource path="res://assets/items/gnome.png" type="Texture" id=7]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/theme/MyBleedingScars-B0J5.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/theme/ZenAntique-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/items/key.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
 
 [node name="bulletin" type="TextureRect"]
 anchor_right = 1.0
@@ -45,6 +60,63 @@ text = "Turn Around"
 
 [node name="Pause" parent="." instance=ExtResource( 1 )]
 visible = false
+
+[node name="everything_poster" type="ColorRect" parent="."]
+margin_left = 434.385
+margin_top = 92.4949
+margin_right = 577.385
+margin_bottom = 268.495
+rect_rotation = -2.0
+color = Color( 0.686275, 0.686275, 0.686275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="graffiti1" type="Label" parent="everything_poster"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -58.0
+margin_top = -65.5
+margin_right = 58.0
+margin_bottom = 65.5
+custom_fonts/font = SubResource( 1 )
+text = "‘Без бога-то и без будущей жизни? Ведь это, стало быть, теперь всё позволено, всё можно делать?’"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="key" type="Sprite" parent="."]
+position = Vector2( 574.447, 271.157 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 11 )
+
+[node name="take_key" parent="." instance=ExtResource( 4 )]
+margin_left = 424.842
+margin_top = 282.012
+margin_right = 624.842
+margin_bottom = 302.012
+
+[node name="Label" parent="take_key" index="1"]
+text = "Take Desk Key"
+
+[node name="graffiti2" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 12.8877
+margin_top = 247.268
+margin_right = 187.888
+margin_bottom = 290.268
+rect_rotation = -1.0
+custom_fonts/font = SubResource( 2 )
+text = "Si Dieu n'existait pas,
+il faudrait l'inventer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="gnome_poster" type="ColorRect" parent="."]
 margin_left = 32.0
@@ -89,3 +161,4 @@ autowrap = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="to_work_desks"]
+[editable path="take_key"]

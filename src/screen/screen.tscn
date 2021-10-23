@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/screen/Windows_Screen.png" type="Texture" id=1]
 [ext_resource path="res://src/screen/icons/mail.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/screen/icons/calculator.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/screen/windows/calculator.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/screen/windows/trash.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/screen/icons/media-record.png" type="Texture" id=15]
 
 [node name="screen" type="Control"]
 anchor_right = 1.0
@@ -41,6 +42,12 @@ margin_left = 70.0
 margin_top = 60.0
 margin_right = 102.0
 margin_bottom = 92.0
+
+[node name="new_mail" type="Sprite" parent="screen/mail"]
+visible = false
+position = Vector2( 25, 10 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 15 )
 
 [node name="tasks" parent="screen" instance=ExtResource( 6 )]
 margin_left = 70.0

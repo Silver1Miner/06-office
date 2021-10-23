@@ -10,8 +10,9 @@ func _ready() -> void:
 	populate_email_content(0)
 
 func populate_email_list() -> void:
-	#for item in PlayerData.current_emails:
-	for item in len(emails):
+	mail_headings.clear()
+	for item in PlayerData.current_emails:
+	#for item in len(emails):
 		var title = emails[item]["title"]
 		if len(title) > 19:
 			title = title.substr(0, 19) + "..."

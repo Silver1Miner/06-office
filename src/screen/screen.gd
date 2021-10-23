@@ -33,12 +33,19 @@ func _on_meter_full() -> void:
 	Music.play_effect(1)
 	if get_tree().change_scene_to(PlayerData.work_desks_dir) != OK:
 		push_error("fail to change scene to work desks")
-	
+
+func _new_mail_received() -> void:
+	if PlayerData.current_emails < PlayerData.max_emails:
+		PlayerData.current_emails += 1
+		$screen/mail/new_mail.visible = true
+		Music.play_effect(6)
+		$email/EmailGame.populate_email_list()
 
 func _on_icon_pressed(identity: String) -> void:
 	#print(identity + " icon pressed")
 	match identity:
 		"MAIL":
+			$screen/mail/new_mail.visible = false
 			email.visible = true
 		"TASKS":
 			tasks.visible = true

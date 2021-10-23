@@ -5,6 +5,8 @@
 [ext_resource path="res://assets/theme/CourierPrime-Bold.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
 [node name="TagGame" type="Control"]
@@ -82,7 +84,7 @@ margin_right = 220.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 220, 140 )
 text = "INSTRUCTIONS:
-Select tags from the tag pool. Hold SHIFT to select multiple tags. Click ENTER to submit or CANCEL to reset.
+Select tags from the tag pool. Hold CTRL to select multiple tags. Click ENTER to submit or CANCEL to reset.
 Your work will be verified against that of co-workers and earlier iterations of the AI."
 align = 3
 autowrap = true

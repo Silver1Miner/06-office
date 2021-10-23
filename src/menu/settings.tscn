@@ -21,19 +21,21 @@ anchor_bottom = 1.0
 margin_left = -288.0
 margin_top = 27.0
 margin_right = -18.0
-margin_bottom = -73.0
+margin_bottom = -54.0
 text = "THE GAS LIGHT
 by Jack Anderson
 
 
 
 
-Additional CC0 assets from:
+Additional Assets from:
 pexels.com
 unsplash.com
 opengameart.org
 freesound.org
-kenney.nl"
+kenney.nl
+fonts.google.com
+fontspace.com"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
