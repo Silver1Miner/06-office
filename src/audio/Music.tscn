@@ -11,3 +11,5 @@ script = ExtResource( 2 )
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 bus = "Sound"
+
+[node name="Sheperd" type="AudioStreamPlayer" parent="."]

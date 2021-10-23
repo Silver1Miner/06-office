@@ -12,9 +12,13 @@ func _ready() -> void:
 	if PlayerData.tags_completed < 6:
 		$textbox.initialize(["The office lobby. Doubles as a kitchen."])
 		$to_kitchen.visible = false
+		$gnome.visible = true
+		$Tooltip4.visible = true
 	else:
 		$textbox.initialize(["The office lobby. A place to rest up after work."])
 		$to_kitchen.visible = true
+		$gnome.visible = false
+		$Tooltip4.visible = false
 	if PlayerData.current_level < 1:
 		PlayerData.current_level = 1
 

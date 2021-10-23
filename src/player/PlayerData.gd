@@ -7,7 +7,6 @@ var first_play := ""
 var tags_completed := 0
 var current_job_level := 0
 var ending := 0
-# 0: Good or Bad, 1: AR, 2: Energy Drink
 
 # Inventory
 var has_gaslight = false
@@ -29,4 +28,5 @@ var office_dir = preload("res://src/office/office.tscn")
 var bulletin_dir = preload("res://src/office/bulletin.tscn")
 var bathroom_dir = preload("res://src/office/bathroom.tscn")
 var kitchen_dir = preload("res://src/office/kitchen.tscn")
+var drawer_dir = preload("res://src/office/drawer.tscn")
 var screen = preload("res://src/screen/screen.tscn")

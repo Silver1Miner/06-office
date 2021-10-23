@@ -10,7 +10,6 @@ func _ready() -> void:
 	update_view()
 	$textbox.initialize(["The office kitchen. A place to eat and drink."])
 
-
 func _go_to_lobby() -> void:
 	if get_tree().change_scene_to(PlayerData.lobby_dir) != OK:
 		push_error("fail to change scene")

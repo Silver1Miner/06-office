@@ -16,7 +16,7 @@ func _on_timer_timeout() -> void:
 		text.set_visible_characters(text.get_visible_characters()+1)
 
 func _on_Tooltip_mouse_entered() -> void:
-	color = Color(0,0,0,40.0/255)
+	color = Color(0,0,0,120.0/255)
 	text.set_visible_characters(0)
 	text_playing = true
 	timer.start()

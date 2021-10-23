@@ -29,10 +29,10 @@ texture = ExtResource( 1 )
 margin_bottom = -352.0
 
 [node name="Tooltip" parent="." instance=ExtResource( 6 )]
-margin_left = 250.0
+margin_left = 191.0
 margin_top = 100.0
-margin_right = -246.0
-margin_bottom = -181.0
+margin_right = -178.0
+margin_bottom = -138.0
 
 [node name="text" parent="Tooltip" index="0"]
 text = "The Elevator Exit

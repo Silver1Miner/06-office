@@ -44,6 +44,15 @@ margin_bottom = 100.0
 [node name="Label" parent="to_hallway" index="1"]
 text = "Back to Hallway"
 
+[node name="to_desk_drawer" parent="." instance=ExtResource( 2 )]
+margin_left = 345.37
+margin_top = 201.341
+margin_right = 545.37
+margin_bottom = 221.341
+
+[node name="Label" parent="to_desk_drawer" index="1"]
+text = "Open Desk Drawer"
+
 [node name="Tooltip" parent="." instance=ExtResource( 3 )]
 margin_left = 213.0
 margin_top = 71.0
@@ -69,6 +78,15 @@ margin_right = 30.0
 margin_bottom = 22.0
 text = "The Manager's computer monitor. It's not actually connected to anything and completely for show. What does the manager even do?"
 
+[node name="Tooltip3" parent="." instance=ExtResource( 3 )]
+margin_left = 358.0
+margin_top = 237.0
+margin_right = -129.0
+margin_bottom = -125.0
+
+[node name="text" parent="Tooltip3" index="0"]
+text = "Manager's Locked Desk Drawers. Needs a Key."
+
 [node name="textbox" parent="." instance=ExtResource( 5 )]
 visible = false
 
@@ -82,5 +100,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 
 [editable path="to_hallway"]
+[editable path="to_desk_drawer"]
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
+[editable path="Tooltip3"]

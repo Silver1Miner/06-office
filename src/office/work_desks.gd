@@ -55,6 +55,6 @@ func _go_to_bulletin() -> void:
 		push_error("fail to change scene to bulletin")
 
 func _hack_computer() -> void:
-	PlayerData.ending = 3
+	PlayerData.ending = 1
 	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:
 		push_error("fail to change scene to ending")

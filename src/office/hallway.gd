@@ -7,6 +7,10 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_office.connect("meter_full", self, "_go_to_office") != OK:
 		push_error("signal connect fail")
+	if PlayerData.has_gaslight:
+		$Light2D.enabled = true
+	else:
+		$Light2D.enabled = false
 	$textbox.initialize(["The office hallway"])
 
 func _go_to_desks() -> void:

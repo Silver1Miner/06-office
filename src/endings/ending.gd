@@ -1,39 +1,41 @@
 extends Control
 
-export var ending_test = 0
 var next_level := "res://src/menu/main_menu.tscn"
 onready var textbox = $textbox
+var casserole_image = preload("res://assets/endings/angry.jpg")
+var hallucination_image = preload("res://assets/endings/cans.jpg")
+var ladder_image = preload("res://assets/endings/ladder.jpg")
+var hacker_image = preload("res://assets/endings/security.jpg")
+var tunnel_image = preload("res://assets/endings/tunnel.jpg")
+var ai_image = preload("res://assets/endings/arrested.jpg")
 
 func _ready() -> void:
 	$Next.visible = false
 	textbox.timer.wait_time = 0.05
 	if textbox.connect("text_finished", self, "_on_text_finished") != OK:
 		push_error("ending signal connect fail")
-	if ending_test > 0:
-		next_level = "res://src/menu/main_menu.tscn"
-		match ending_test:
-			1: textbox.initialize(casserole)
-			2: textbox.initialize(hallucination)
-			3: textbox.initialize(promotion)
-			4: textbox.initialize(demotion)
-			5: textbox.initialize(hacker)
-			6: textbox.initialize(true_ending)
-	elif PlayerData.current_level == 0:
+	if PlayerData.current_level == 0:
 		next_level = "res://src/office/lobby.tscn"
 		textbox.initialize(intro_text)
 	else:
 		next_level = "res://src/menu/main_menu.tscn"
-		if PlayerData.ending > 0:
-			match PlayerData.ending:
-				1:
-					textbox.initialize(casserole)
-				2:
-					textbox.initialize(hallucination)
-				3:
-					hacker_ending()
+		if PlayerData.ending == 2:
+			$image.texture = tunnel_image
+			textbox.initialize(true_ending)
+		elif PlayerData.ending == 1:
+			$image.texture = hacker_image
+			textbox.initialize(hacker)
+		elif PlayerData.has_casserole:
+			$image.texture = casserole_image
+			textbox.initialize(casserole)
+		elif PlayerData.has_drink:
+			$image.texture = hallucination_image
+			textbox.initialize(hallucination)
 		elif PlayerData.tags_completed >= 6:
+			$image.texture = ladder_image
 			textbox.initialize(promotion)
 		else:
+			$image.texture = ladder_image
 			textbox.initialize(demotion)
 
 func _on_text_finished() -> void:
@@ -43,9 +45,6 @@ func _on_Next_pressed() -> void:
 	if get_tree().change_scene(next_level) != OK:
 		push_error("fail to change scene")
 
-func hacker_ending() -> void:
-	textbox.initialize(hacker)
-
 var intro_text = [
 """Another day at work.
 										   
@@ -54,8 +53,9 @@ I don't remember how long I've had this job. All the days just end up feeling th
 Last time anything different happened was when they replaced the electric lights with gas lights. But it's been so long ago I don't even remember how long it's been.
 										  
 Such a monotonous office job. Go in. Go to my computer. Do the tasks I've been assigned. Go out.
-Day in, day out, clock in, clock out.
 										  
+Day in, day out. Clock in, clock out.
+										
 Sometimes, I just wish something unexpected would happen."""
 ]
 
@@ -73,7 +73,10 @@ Completing the work assignments of your missing co-workers.
 										
 We appreciate you taking on these additional responsibilities without any increase in salary.
 										  
-See you in the office tomorrow.""",
+See you in the office tomorrow.
+										 
+Sincerely,
+Your Manager""",
 ]
 
 var demotion = [
@@ -91,24 +94,25 @@ Revocation of Office Safety Privileges
 										  
 Any additional unauthorized activity will result in increasingly severe penalties. You have been warned.
 										  
-See you in the office tomorrow.""",
+See you in the office tomorrow.
+										 
+Sincerely,
+Your Manager
+""",
 ]
 
 var casserole = [
 """BEST ENDING
 
-Employee,
+I'm so glad I stole this casserole.
 										  
-I know you took my casserole.
+After eating it, everything just feels like it finally makes sense.
 										  
-Forgot to take off your AR glasses while stealing it, huh? All those audio-visual glitches didn't tip you off that you were still wearing them?
+All that weird stuff I've been seeing and hearing is probably just my mandatory Augmented Reality goggles having a few glitches.
 										
-Or did you perhaps think all those glitches you were seeing/hearing were all real?
+There's no escaped malevolent AI out to get me. All the AI our office works on is really primitive. My entire job is to tag images to train the really primitive AI.
 										
-Well, they will be real soon enough.
-Thieves go to the eighth circle of hell.
-										
-See you in the office tomorrow.""",
+I'm actually looking forward to going into the office tomorrow.'""",
 ]
 
 var hallucination = [
@@ -118,15 +122,18 @@ To All Employees,
 										
 Our research scientists have retracted their previous announcment of no significant detection of hallucinatory side-effects of consuming company-provided energy drinks.
 										
-Additionally, recent reports of:
+Additionally, recent outrageous reports of:
 Missing employees
 Discovery of severed body parts in company restrooms
-Appearing and disappearing gnomes
+Malevolent AI takeover of the office
 are entirely due to the hallucinatory side-effects of the energy drinks.
 										
 The office is completely safe and poses absolutely no danger to employees.
 										
-See you in the office tomorrow."""]
+See you in the office tomorrow.
+
+Sincerely,
+Your Chief Operations Officer"""]
 
 var hacker = [
 """BAD ENDING
@@ -138,7 +145,7 @@ Attempting to access company computational resources to which you have not been 
 										  
 Due to the severity of this violation, you are hereby terminated, effective immediately.
 										
-Security personnel are already at your location and will now terminate you. 
+The security personnel assigned to walk behind you to monitor you will now terminate you. 
 										
 Goodbye.""",
 ]
@@ -146,9 +153,11 @@ Goodbye.""",
 var true_ending = [
 """TRUE ENDING
 
-Hi Boss,
+A long tunnel leads off into the darkness.
 										
-I quit.
+I have no idea where it goes, but wherever it is, it has to be better than where I am now.
 										
-So long and thanks for nothing.
+As I step inside the tunnel, the door shuts and locks behind me.
+										
+Well, here I go.
 """]

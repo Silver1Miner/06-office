@@ -23,4 +23,5 @@ func _take_key() -> void:
 	PlayerData.has_key = true
 	$key.visible = false
 	$take_key.visible = false
+	$textbox.initialize(["Took the key off the poster"])
 	Music.play_effect(5)

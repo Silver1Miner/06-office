@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	PlayerData.current_level = 0
+	PlayerData.ending = 0
 	PlayerData.tags_completed = 0
 	PlayerData.has_drink = false
 	PlayerData.has_casserole = false

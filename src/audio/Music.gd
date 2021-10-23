@@ -3,7 +3,6 @@ extends AudioStreamPlayer
 var tracks = [
 	preload("res://assets/music/Working_Music.ogg"),
 	preload("res://assets/music/540634__shortrecord__horror-ambient.mp3"),
-	preload("res://assets/music/274487__brainclaim__shepard-tone.ogg")
 ]
 
 func _ready() -> void:
@@ -17,6 +16,13 @@ func play_track(index: int) -> void:
 func play_effect(index: int) -> void:
 	$Sound.stream = effects[index]
 	$Sound.play(0)
+
+func play_sheperd() -> void:
+	$Sheperd.stream = preload("res://assets/music/274487__brainclaim__shepard-tone.ogg")
+	$Sheperd.play(0)
+
+func end_shepherd() -> void:
+	$Sheperd.stop()
 
 var effects = [
 	preload("res://assets/sound/on.ogg"), #0
