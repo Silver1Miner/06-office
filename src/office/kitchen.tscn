@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/theme/ZenAntique-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 4
+size = 2
 extra_spacing_bottom = -4
 font_data = ExtResource( 8 )
 
@@ -76,13 +76,14 @@ margin_right = -192.0
 margin_bottom = -90.0
 
 [node name="text" parent="Tooltip2" index="0"]
-text = "The table smells like disinfectant and bleach. Maybe someone spilled energy drink. I never drink it usually."
+text = "The table smells like disinfectant and bleach. Maybe someone spilled energy drink. I never drink the stuff."
 
 [node name="slogan" type="Label" parent="."]
-margin_left = 157.865
-margin_top = 157.53
-margin_right = 233.865
-margin_bottom = 178.53
+margin_left = 166.0
+margin_top = 165.5
+margin_right = 210.0
+margin_bottom = 177.5
+rect_rotation = -5.0
 custom_fonts/font = SubResource( 1 )
 text = "Achievement is Born
 From Sacrifice"

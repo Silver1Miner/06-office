@@ -33,3 +33,11 @@ var drawer_dir = preload("res://src/office/drawer.tscn")
 var right_desks_dir = preload("res://src/office/right_desks.tscn")
 var altar_dir = preload("res://src/office/altar.tscn")
 var screen = preload("res://src/screen/screen.tscn")
+
+func reset_items() -> void:
+	has_gaslight = false
+	has_key = false
+	has_finger = false
+	has_drink = false
+	has_casserole = false
+	has_feather = false

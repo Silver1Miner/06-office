@@ -42,6 +42,8 @@ var emails := [
 "from": "Director of Engineering",
 "text": """Your image tagging daily quota is now: 6
 
+Do NOT exceed your daily quota.
+
 Some employees have recently submitted reports raising concerns that they are being asked to repeatedly tag the same images and questioned if the number of pictures in the pool are limited, and if repeated pictures count toward the quota.
 
 There is no cause for concern. If employees receive the same image, they are to continue tagging as normal. All images, without regard to whether they are duplicate or not, are to be tagged and count toward the quota.

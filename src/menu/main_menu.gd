@@ -19,8 +19,7 @@ func _on_new_game_pressed() -> void:
 	PlayerData.current_level = 0
 	PlayerData.ending = 0
 	PlayerData.tags_completed = 0
-	PlayerData.has_drink = false
-	PlayerData.has_casserole = false
+	PlayerData.reset_items()
 	Music.play_track(1)
 	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:
 		push_error("failed to start game")

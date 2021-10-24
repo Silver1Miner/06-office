@@ -70,4 +70,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_Timer_timeout() -> void:
+	$gnome.visible = true
 	Music.play_effect(5)

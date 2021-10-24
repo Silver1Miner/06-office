@@ -11,12 +11,14 @@ func _ready() -> void:
 		$Light2D.enabled = true
 		if PlayerData.has_finger:
 			texture = load("res://assets/office/bathroom.jpg")
+			$graffiti.visible = true
 			$gnome.visible = false
 			$get_finger.visible = false
-			$to_secret_exit.visible = true
-			$textbox.initialize(["The office restroom. Huh, there's another exit in the back. Never noticed it before."])
+			$to_secret_exit.visible = false
+			$textbox.initialize(["The office restroom."])
 		else:
 			texture = load("res://assets/office/bathroom2.jpg")
+			$graffiti.visible = false
 			$gnome.visible = true
 			$get_finger.visible = true
 			$to_secret_exit.visible = false
@@ -48,6 +50,8 @@ func select_background() -> void:
 	if rand_range(1,10) < 9:
 		texture = load("res://assets/office/bathroom.jpg")
 		$gnome.visible = false
+		$graffiti.visible = true
 	else:
 		texture = load("res://assets/office/bathroom2.jpg")
 		$gnome.visible = true
+		$graffiti.visible = false

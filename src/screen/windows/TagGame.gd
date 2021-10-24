@@ -15,14 +15,26 @@ func _ready() -> void:
 		push_error("cancel connect fail")
 	displays.shuffle()
 	update_display(current)
-	progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
+	#progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
+	if PlayerData.tags_completed >= 6:
+		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
+		$Panels/Options/Enter.disabled = true
+		$Panels/Options/Cancel.disabled = true
+	else:
+		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
+		$Panels/Options/Enter.disabled = false
+		$Panels/Options/Cancel.disabled = false
 
 func _on_enter_pressed() -> void:
 	PlayerData.tags_completed += 1
 	if PlayerData.tags_completed >= 6:
 		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
+		$Panels/Options/Enter.disabled = true
+		$Panels/Options/Cancel.disabled = true
 	else:
 		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
+		$Panels/Options/Enter.disabled = false
+		$Panels/Options/Cancel.disabled = false
 	current += 1
 	if current >= len(displays):
 		current = 0

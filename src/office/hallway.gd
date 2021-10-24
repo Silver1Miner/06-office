@@ -17,7 +17,7 @@ func _ready() -> void:
 		$Light2D.enabled = true
 	else:
 		$Light2D.enabled = false
-	$textbox.initialize(["The office hallway"])
+	$textbox.initialize(["The office hallway. My computer desk is to the left."])
 
 func _go_to_desks() -> void:
 	if get_tree().change_scene_to(PlayerData.work_desks_dir) != OK:

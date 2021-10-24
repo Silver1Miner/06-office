@@ -138,8 +138,8 @@ texture = ExtResource( 14 )
 
 [node name="camera" type="Sprite" parent="."]
 self_modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
-position = Vector2( 618.045, 114.485 )
-rotation = -2.70875
+position = Vector2( 636.3, 277.194 )
+rotation = -2.81696
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 15 )
 

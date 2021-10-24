@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/office/bathroom2.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/office/bathroom.jpg" type="Texture" id=4]
 [ext_resource path="res://src/office/bathroom.gd" type="Script" id=5]
 [ext_resource path="res://assets/items/gnome.png" type="Texture" id=6]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/ui/Light2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/theme/MyBleedingScars-B0J5.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+font_data = ExtResource( 9 )
 
 [node name="bathroom" type="TextureRect"]
 anchor_right = 1.0
@@ -65,6 +70,22 @@ margin_bottom = 127.073
 
 [node name="Label" parent="to_secret_exit" index="1"]
 text = "Use Back Exit"
+
+[node name="graffiti" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 203.0
+margin_right = 85.0
+margin_bottom = 261.0
+rect_rotation = -3.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "God so loved us that He sacrificed Himself to create us.
+It is only fitting we sacrifice ourselves to create a new god"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="to_lobby"]
 [editable path="get_finger"]
