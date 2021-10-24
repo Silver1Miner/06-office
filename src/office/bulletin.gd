@@ -21,6 +21,7 @@ func _on_Timer_timeout() -> void:
 
 func _take_key() -> void:
 	PlayerData.has_key = true
+	$inventory_hud.update_display()
 	$key.visible = false
 	$take_key.visible = false
 	$textbox.initialize(["Took the key off the poster"])

@@ -7,6 +7,12 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_office.connect("meter_full", self, "_go_to_office") != OK:
 		push_error("signal connect fail")
+	if $to_right.connect("meter_full", self, "_go_to_right") != OK:
+		push_error("signal connect fail")
+	if PlayerData.has_key:
+		$to_right.visible = true
+	else:
+		$to_right.visible = false
 	if PlayerData.has_gaslight:
 		$Light2D.enabled = true
 	else:
@@ -23,4 +29,8 @@ func _go_to_lobby() -> void:
 
 func _go_to_office() -> void:
 	if get_tree().change_scene_to(PlayerData.office_dir) != OK:
+		push_error("fail to change scene")
+
+func _go_to_right() -> void:
+	if get_tree().change_scene_to(PlayerData.right_desks_dir) != OK:
 		push_error("fail to change scene")

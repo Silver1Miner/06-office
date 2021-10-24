@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/office/lobby.jpg" type="Texture" id=1]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/items/gnome.png" type="Texture" id=7]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/items/camera.png" type="Texture" id=9]
+[ext_resource path="res://assets/theme/ZenAntique-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 10 )
 
 [node name="lobby" type="TextureRect"]
 anchor_left = -0.00031004
@@ -22,7 +28,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="inventory_hud" parent="." instance=ExtResource( 8 )]
+[node name="slogan" type="Label" parent="."]
+margin_left = 21.9099
+margin_top = 72.2929
+margin_right = 135.91
+margin_bottom = 105.293
+custom_fonts/font = SubResource( 1 )
+text = "Achievement is Born
+From Sacrifice"
+align = 1
 
 [node name="Tooltip" parent="." instance=ExtResource( 5 )]
 margin_left = 430.0
@@ -75,6 +89,15 @@ margin_bottom = -184.0
 [node name="text" parent="Tooltip4" index="0"]
 text = "The Office Mascot Gnome"
 
+[node name="Tooltip5" parent="." instance=ExtResource( 5 )]
+margin_left = 17.0
+margin_top = 71.0
+
+[node name="text" parent="Tooltip5" index="0"]
+margin_top = -5.61234
+margin_bottom = -5.61234
+text = "The Office Slogan"
+
 [node name="to_hallway" parent="." instance=ExtResource( 4 )]
 margin_left = 240.0
 margin_top = 250.0
@@ -103,9 +126,9 @@ text = "Turn Around to Exit"
 
 [node name="to_restroom" parent="." instance=ExtResource( 4 )]
 margin_left = 3.0
-margin_top = 100.0
+margin_top = 140.0
 margin_right = 203.0
-margin_bottom = 120.0
+margin_bottom = 160.0
 
 [node name="Label" parent="to_restroom" index="1"]
 text = "Go to Restroom"
@@ -130,10 +153,21 @@ position = Vector2( 217.492, 179.293 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 
+[node name="camera" type="Sprite" parent="."]
+self_modulate = Color( 0.733333, 0.733333, 0.733333, 1 )
+position = Vector2( 221.385, 6.85611 )
+rotation = -4.33365
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+
+[node name="inventory_hud" parent="." instance=ExtResource( 8 )]
+margin_bottom = -352.002
+
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
 [editable path="Tooltip3"]
 [editable path="Tooltip4"]
+[editable path="Tooltip5"]
 [editable path="to_hallway"]
 [editable path="to_elevator"]
 [editable path="to_restroom"]

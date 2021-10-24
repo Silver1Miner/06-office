@@ -14,6 +14,7 @@ var has_key = false
 var has_finger = false
 var has_drink = false
 var has_casserole = false
+var has_feather = false
 
 var easy_mode = false
 var screen_switch_speed := 2
@@ -29,4 +30,6 @@ var bulletin_dir = preload("res://src/office/bulletin.tscn")
 var bathroom_dir = preload("res://src/office/bathroom.tscn")
 var kitchen_dir = preload("res://src/office/kitchen.tscn")
 var drawer_dir = preload("res://src/office/drawer.tscn")
+var right_desks_dir = preload("res://src/office/right_desks.tscn")
+var altar_dir = preload("res://src/office/altar.tscn")
 var screen = preload("res://src/screen/screen.tscn")

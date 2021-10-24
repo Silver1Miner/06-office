@@ -51,19 +51,25 @@ margin_bottom = 100.0
 [node name="Label" parent="to_office" index="1"]
 text = "Enter Manager's Office"
 
+[node name="gnome" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.168627 )
+position = Vector2( 499.616, 270.937 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
 [node name="Tooltip" parent="." instance=ExtResource( 5 )]
 margin_left = 426.0
 margin_top = 111.0
 margin_right = -15.0
-margin_bottom = -106.0
+margin_bottom = -168.0
 
 [node name="text" parent="Tooltip" index="0"]
 margin_left = 2.0
 margin_top = 1.0
 margin_right = 1.0
-margin_bottom = 2.0
+margin_bottom = -57.0
 text = "The Right Side Work Desks
-The doors are closed and no one else is here. That's weird."
+The doors need a key. No one else is here. That's weird."
 
 [node name="Tooltip2" parent="." instance=ExtResource( 5 )]
 margin_left = 65.0
@@ -91,16 +97,19 @@ margin_right = 15.25
 margin_bottom = 31.9566
 text = "The Manager's Office is down here"
 
+[node name="to_right" parent="." instance=ExtResource( 3 )]
+margin_left = 433.544
+margin_top = 196.371
+margin_right = 633.544
+margin_bottom = 216.371
+
+[node name="Label" parent="to_right" index="1"]
+text = "Enter Right Side"
+
 [node name="textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="Pause" parent="." instance=ExtResource( 6 )]
 visible = false
-
-[node name="gnome" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.168627 )
-position = Vector2( 499.616, 270.937 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 7 )
 
 [node name="Light2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 339.629, 10.8988 )
@@ -111,3 +120,4 @@ position = Vector2( 339.629, 10.8988 )
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
 [editable path="Tooltip3"]
+[editable path="to_right"]

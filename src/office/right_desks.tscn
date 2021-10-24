@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/office/right-desks.jpg" type="Texture" id=1]
+[ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/office/right_desks.gd" type="Script" id=6]
+[ext_resource path="res://assets/items/camera.png" type="Texture" id=7]
+[ext_resource path="res://assets/theme/MyBleedingScars-B0J5.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 8 )
+
+[node name="right_desks" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory_hud" parent="." instance=ExtResource( 4 )]
+
+[node name="Pause" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="textbox" parent="." instance=ExtResource( 3 )]
+margin_left = -11.3137
+margin_top = -99.2929
+margin_right = -11.3137
+margin_bottom = 0.707092
+
+[node name="to_altar" parent="." instance=ExtResource( 5 )]
+margin_left = 396.902
+margin_top = 163.087
+margin_right = 596.902
+margin_bottom = 183.087
+
+[node name="Label" parent="to_altar" index="1"]
+text = "Use Back Door"
+
+[node name="to_hallway" parent="." instance=ExtResource( 5 )]
+margin_left = 14.1425
+margin_top = 332.017
+margin_right = 214.142
+margin_bottom = 352.017
+
+[node name="Label" parent="to_hallway" index="1"]
+text = "Exit to Hallway"
+
+[node name="camera" type="Sprite" parent="."]
+position = Vector2( 272.797, 246.248 )
+rotation = -1.19206
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 7 )
+
+[node name="slogan" type="Label" parent="."]
+margin_left = 61.3597
+margin_top = 161.551
+margin_right = 185.36
+margin_bottom = 200.551
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Achievement is born
+From Sacrifice"
+align = 1
+
+[editable path="to_altar"]
+[editable path="to_hallway"]

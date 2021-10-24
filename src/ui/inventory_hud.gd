@@ -9,3 +9,4 @@ func update_display() -> void:
 	$items/casserole.visible = PlayerData.has_casserole
 	$items/key.visible = PlayerData.has_key
 	$items/finger.visible = PlayerData.has_finger
+	$items/feather.visible = PlayerData.has_feather

@@ -1,0 +1,148 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/office/altar.jpg" type="Texture" id=1]
+[ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/office/altar.gd" type="Script" id=6]
+[ext_resource path="res://assets/218px-Crowley_unicursal_hexagram.svg.png" type="Texture" id=7]
+[ext_resource path="res://assets/theme/MyBleedingScars-B0J5.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/items/knife.png" type="Texture" id=9]
+[ext_resource path="res://assets/theme/CourierPrime-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/items/gaslight.png" type="Texture" id=11]
+[ext_resource path="res://assets/items/cans.png" type="Texture" id=12]
+[ext_resource path="res://assets/items/hand.png" type="Texture" id=13]
+[ext_resource path="res://assets/items/feather.png" type="Texture" id=14]
+[ext_resource path="res://assets/items/camera.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 10 )
+
+[node name="altar" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory_hud" parent="." instance=ExtResource( 4 )]
+
+[node name="Pause" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="textbox" parent="." instance=ExtResource( 3 )]
+
+[node name="218px-Crowley_unicursal_hexagramsvg" type="Sprite" parent="."]
+position = Vector2( 320.013, 89.5656 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="knife" type="Sprite" parent="."]
+position = Vector2( 510.5, 244.085 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="to_right_desks" parent="." instance=ExtResource( 5 )]
+margin_left = 80.0
+margin_top = 340.0
+margin_right = 280.0
+margin_bottom = 360.0
+
+[node name="Label" parent="to_right_desks" index="1"]
+text = "Exit to Right Desks"
+
+[node name="sacrifice" parent="." instance=ExtResource( 5 )]
+margin_left = 420.0
+margin_top = 200.0
+margin_right = 620.0
+margin_bottom = 220.0
+
+[node name="Label" parent="sacrifice" index="1"]
+text = "Sacrifice at the Altar"
+
+[node name="flee" parent="." instance=ExtResource( 5 )]
+margin_left = 435.0
+margin_top = 360.0
+margin_right = 635.0
+margin_bottom = 380.0
+
+[node name="Label" parent="flee" index="1"]
+text = "Use Trap Door"
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -97.0
+margin_right = 97.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "
+ALL GODS DEMAND SACRIFICE
+EVEN THE ONES WE CREATED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deusex" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -91.0
+margin_right = 90.0
+margin_bottom = -67.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "apò mēkhanês theós"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="items" type="Node2D" parent="."]
+position = Vector2( 321, 227 )
+
+[node name="gaslight" type="Sprite" parent="items"]
+position = Vector2( -2.33197, 4.34549 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="cans" type="Sprite" parent="items"]
+position = Vector2( 26.5504, 42.9776 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+
+[node name="hand" type="Sprite" parent="items"]
+position = Vector2( -4.73706, 67.7808 )
+rotation = -1.40848
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 13 )
+
+[node name="feather" type="Sprite" parent="items"]
+position = Vector2( -28.7334, 58.3752 )
+rotation = -1.39626
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 14 )
+
+[node name="camera" type="Sprite" parent="."]
+self_modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
+position = Vector2( 618.045, 114.485 )
+rotation = -2.70875
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 15 )
+
+[editable path="to_right_desks"]
+[editable path="sacrifice"]
+[editable path="flee"]

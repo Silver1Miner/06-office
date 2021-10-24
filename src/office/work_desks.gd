@@ -1,7 +1,6 @@
 extends TextureRect
 
 #onready var screen = $screen
-
 func _ready() -> void:
 	select_background()
 	if $to_computer.connect("meter_full", self, "_on_screen_enter") != OK:
@@ -22,7 +21,7 @@ func _ready() -> void:
 
 func select_background() -> void:
 	randomize()
-	if rand_range(1,10) > 9:
+	if rand_range(1,6) > 4:
 		texture = load("res://assets/office/workdesks.jpg")
 		$Tooltip.visible = true
 		$to_computer.rect_position = Vector2(380,260)

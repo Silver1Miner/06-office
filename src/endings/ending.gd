@@ -19,8 +19,11 @@ func _ready() -> void:
 		textbox.initialize(intro_text)
 	else:
 		next_level = "res://src/menu/main_menu.tscn"
-		if PlayerData.ending == 2:
+		if PlayerData.ending == 3:
 			$image.texture = tunnel_image
+			textbox.initialize(true_ending)
+		elif PlayerData.ending == 2:
+			$image.texture = casserole_image
 			textbox.initialize(true_ending)
 		elif PlayerData.ending == 1:
 			$image.texture = hacker_image
@@ -28,9 +31,6 @@ func _ready() -> void:
 		elif PlayerData.has_casserole:
 			$image.texture = casserole_image
 			textbox.initialize(casserole)
-		elif PlayerData.has_drink:
-			$image.texture = hallucination_image
-			textbox.initialize(hallucination)
 		elif PlayerData.tags_completed >= 6:
 			$image.texture = ladder_image
 			textbox.initialize(promotion)
@@ -60,23 +60,24 @@ Sometimes, I just wish something unexpected would happen."""
 ]
 
 var promotion = [
-"""GOOD ENDING
+"""STANDARD ENDING
 
-Employee,
-										  
-Congratulations on a hard day's work. We applaud your dedication to your work despite the disappearance of your coworkers.
-										  
-In recognition of your good work, the company is proud to award you with a promotion.
-										  
-The new responsibilities in your promoted role include:
-Completing the work assignments of your missing co-workers.
+To All Employees,
 										
-We appreciate you taking on these additional responsibilities without any increase in salary.
-										  
+Our research scientists have retracted their previous announcment of no significant detection of hallucinatory side-effects of consuming company-provided energy drinks.
+										
+Additionally, recent outrageous reports of:
+Missing employees
+Discovery of severed body parts in company restrooms
+Malevolent AI takeover of the office
+are entirely due to the hallucinatory side-effects of the energy drinks.
+										
+The office is completely safe and poses absolutely no danger to employees.
+										
 See you in the office tomorrow.
-										 
+
 Sincerely,
-Your Manager""",
+Your Chief Operations Officer""",
 ]
 
 var demotion = [
@@ -153,11 +154,11 @@ Goodbye.""",
 var true_ending = [
 """TRUE ENDING
 
-A long tunnel leads off into the darkness.
+Droping down, there is only a long tunnel leads off into the darkness.
 										
 I have no idea where it goes, but wherever it is, it has to be better than where I am now.
 										
-As I step inside the tunnel, the door shuts and locks behind me.
+As I step inside the tunnel, the trap door above shuts.
 										
 Well, here I go.
 """]

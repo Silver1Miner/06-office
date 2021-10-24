@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/office/workdesks.jpg" type="Texture" id=1]
 [ext_resource path="res://src/ui/SwitchCommand.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/ui/Tooltip.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/items/camera.png" type="Texture" id=8]
 
 [node name="work_desks" type="TextureRect"]
 anchor_right = 1.0
@@ -94,6 +95,13 @@ visible = false
 [node name="footsteps" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 617.915, 369.29 )
 bus = "Sound"
+
+[node name="camera" type="Sprite" parent="."]
+self_modulate = Color( 0.796078, 0.796078, 0.796078, 1 )
+position = Vector2( 162.279, 6.40775 )
+rotation = 2.05774
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
 
 [editable path="Tooltip"]
 [editable path="Tooltip2"]

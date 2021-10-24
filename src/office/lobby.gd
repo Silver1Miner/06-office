@@ -10,7 +10,7 @@ func _ready() -> void:
 	if $to_kitchen.connect("meter_full", self, "_go_to_kitchen") != OK:
 		push_error("signal connect fail")
 	if PlayerData.tags_completed < 6:
-		$textbox.initialize(["The office lobby. Doubles as a kitchen."])
+		$textbox.initialize(["The office lobby. Doubles as a kitchen. People like to rest here after work."])
 		$to_kitchen.visible = false
 		$gnome.visible = true
 		$Tooltip4.visible = true
