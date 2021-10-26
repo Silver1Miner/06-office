@@ -24,6 +24,7 @@ margin_right = 2324.0
 margin_bottom = 1824.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
+expand = true
 
 [node name="inventory_hud" parent="." instance=ExtResource( 7 )]
 margin_bottom = -352.0

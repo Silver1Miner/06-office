@@ -45,6 +45,7 @@ margin_right = 102.0
 margin_bottom = 92.0
 
 [node name="new_mail" type="Sprite" parent="screen/mail"]
+visible = false
 position = Vector2( 25, 10 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 15 )
@@ -74,6 +75,7 @@ margin_right = 572.0
 margin_bottom = 332.0
 
 [node name="gnome" type="Sprite" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.0392157 )
 position = Vector2( 486.934, 231.988 )
 rotation = -0.10472
