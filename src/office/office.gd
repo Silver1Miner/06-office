@@ -9,7 +9,7 @@ func _ready() -> void:
 		$to_desk_drawer.visible = true
 	else:
 		$to_desk_drawer.visible = false
-	$textbox.initialize(["The manager's office. The manager is out? The manager is never out."])
+	$textbox.initialize(["The manager's office. The manager is never out."])
 
 func _go_to_hallway() -> void:
 	if get_tree().change_scene_to(PlayerData.hallway_dir) != OK:

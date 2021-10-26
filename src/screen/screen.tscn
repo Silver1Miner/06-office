@@ -45,7 +45,6 @@ margin_right = 102.0
 margin_bottom = 92.0
 
 [node name="new_mail" type="Sprite" parent="screen/mail"]
-visible = false
 position = Vector2( 25, 10 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 15 )

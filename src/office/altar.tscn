@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/office/altar.jpg" type="Texture" id=1]
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://assets/items/cans.png" type="Texture" id=12]
 [ext_resource path="res://assets/items/hand.png" type="Texture" id=13]
 [ext_resource path="res://assets/items/feather.png" type="Texture" id=14]
-[ext_resource path="res://assets/items/camera.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
@@ -66,7 +65,7 @@ margin_right = 620.0
 margin_bottom = 220.0
 
 [node name="Label" parent="sacrifice" index="1"]
-text = "Sacrifice at the Altar"
+text = "Make the Sacrifice"
 
 [node name="flee" parent="." instance=ExtResource( 5 )]
 margin_left = 435.0
@@ -111,6 +110,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="feather" type="Sprite" parent="."]
+position = Vector2( 292.267, 285.375 )
+rotation = -1.39626
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 14 )
+
 [node name="items" type="Node2D" parent="."]
 position = Vector2( 321, 227 )
 
@@ -129,19 +134,6 @@ position = Vector2( -4.73706, 67.7808 )
 rotation = -1.40848
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
-
-[node name="feather" type="Sprite" parent="items"]
-position = Vector2( -28.7334, 58.3752 )
-rotation = -1.39626
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 14 )
-
-[node name="camera" type="Sprite" parent="."]
-self_modulate = Color( 0.85098, 0.85098, 0.85098, 1 )
-position = Vector2( 636.3, 277.194 )
-rotation = -2.81696
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 15 )
 
 [editable path="to_right_desks"]
 [editable path="sacrifice"]

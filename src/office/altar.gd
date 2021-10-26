@@ -8,11 +8,12 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $flee.connect("meter_full", self, "_flee_ending") != OK:
 		push_error("signal connect fail")
-	if PlayerData.has_drink and PlayerData.has_drink and PlayerData.has_finger and PlayerData.has_gaslight:
+	if PlayerData.has_drink and PlayerData.has_finger and PlayerData.has_gaslight:
 		$sacrifice.visible = true
 		$flee.visible = true
 		$items.visible = true
-		$textbox.initialize(["An Altar Waiting Sacrifice. There's a trap door under the altar."])
+		$textbox.initialize(["""An Altar Waiting Sacrifice.
+There's a trap door under the altar."""])
 	else:
 		$sacrifice.visible = false
 		$flee.visible = false

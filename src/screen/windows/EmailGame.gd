@@ -30,7 +30,11 @@ func _on_mail_headings_item_selected(index: int) -> void:
 	populate_email_content(index)
 
 var emails := [
-{"title": "ANNOUNCEMENTS TO ALL EMPLOYEES", #0
+{"title": "EVERYTHING IS FINE",
+"from": "Me",
+"text": """Everything is absolutely fine. There is absolutely nothing wrong. This job is great.
+"""},
+{"title": "ANNOUNCEMENTS TO ALL EMPLOYEES",
 "from": "Human Resources",
 "text": """1. From now on, Employees are required to wear their Augumented Reality (AR) glasses at all times. Failure to wear your AR will lead to disciplinary action up to termination.
 
@@ -38,7 +42,7 @@ var emails := [
 
 3. We are proud to announce that our research scientists have declared that they have found 'no significant evidence' of the company provided energy drinks causing hallucinations, delirium, paranoia, or nightmares.
 """},
-{"title": "NEW QUOTA", #1
+{"title": "NEW QUOTA",
 "from": "Director of Engineering",
 "text": """Your image tagging daily quota is now: 6
 
@@ -50,13 +54,13 @@ There is no cause for concern. If employees receive the same image, they are to 
 
 Even if employees received the exact same image every time, they would be required to tag as usual, even if it mean tagging the exact same image fifty times in a single day. The quota is the only thing that employees need concern themselves with.
 """},
-{"title":"CHANGES TO EMPLOYMENT AGREEMENT", #2
+{"title":"CHANGES TO EMPLOYMENT AGREEMENT",
 "from": "Human Resources",
 "text": """The 'At Will' employment policy now only applies from the employer perspective. Employees are no longer permitted to initiate termination of employment.
 
 Employees who wish to terminate their employment must first submit a petition to their manager and request a X-7 form to complete and give to their manager.
 """},
-{"title":"FW: EXCERPT FROM THE PSYCHOLOGY OF TIME", #3
+{"title":"FW: EXCERPT FROM THE PSYCHOLOGY OF TIME",
 "from": "Milton",
 "text": """Hey whiz kid, you like science, right? I thought you'd appreciate this article.
 
@@ -69,14 +73,14 @@ Human psychology is very dependent on narratives, particularly linear narratives
 Time loops trigger the natural phobia of being trapped. People already fear being trapped in a single space. Imagine how much more horrific it would be trapped in a single time.
 
 Perhaps Hell is not a place, but a time, the same time looped over and over and overall again."""},
-{"title":"RE: SHIP DATE WHEN?", #4
+{"title":"RE: SHIP DATE WHEN?",
 "from": "Michael",
 "text": """Am I going crazy, or have we been working on 'training' this exact same AI for months now? Years? Is this thing ever going to actually be used for anything? When is this thing going to ship?
 
-And what's with all the repeating image tag assignments we get? It's getting really, really obvious that there's a limited pool of possible image assignments, and what's worse that pool is SHRINKING. I swear last week I saw only 12 unique images overall. And we're supposed to tag 6 a day?
+And what's with all the repeating image tag assignments we get? It's getting really, really obvious that there's a limited pool of possible image assignments, and what's worse that pool is SHRINKING. I swear last week I saw only 12 unique images overall. And there's talk of setting the quota at 6 a day?
 
 Something feels really off about this whole project."""},
-{"title":"FROM THE DESK OF THE COO", #5
+{"title":"FROM THE DESK OF THE COO",
 "from": "Office of the COO",
 "text": """Dearest Employees,
 
@@ -84,7 +88,7 @@ As your Chief Operations Officer, I am proud to announce that we have beaten our
 
 We are all very pleased by this result and thank you for your service. In celebration, we are raising our next quarter's earnings goal by 17.3%
 """},
-{"title":"RE: HELL", #6
+{"title":"RE: HELL",
 "from": "Samuel",
 "text": """How would you know if you were in hell? Think about it. The doubt of not knowing for sure would add to the torment, wouldn't it?
 """},
