@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/office/hallway.jpg" type="Texture" id=1]
 [ext_resource path="res://src/office/hallway.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/items/gnome.png" type="Texture" id=7]
 [ext_resource path="res://src/ui/inventory_hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/ui/Light2D.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/office/hallway2.jpg" type="Texture" id=10]
 
 [node name="hallway" type="TextureRect"]
 anchor_right = 1.0
@@ -19,8 +20,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 
 [node name="to_work_desks" parent="." instance=ExtResource( 3 )]
 margin_left = 20.0
@@ -60,41 +59,32 @@ texture = ExtResource( 7 )
 [node name="Tooltip" parent="." instance=ExtResource( 5 )]
 margin_left = 426.0
 margin_top = 111.0
-margin_right = -15.0
-margin_bottom = -168.0
+margin_right = -12.0
+margin_bottom = -209.0
 
 [node name="text" parent="Tooltip" index="0"]
-margin_left = 2.0
-margin_top = 1.0
-margin_right = 1.0
-margin_bottom = -57.0
 text = "The Right Side Work Desks
 The doors need a key. No one else is here. That's weird."
 
 [node name="Tooltip2" parent="." instance=ExtResource( 5 )]
-margin_left = 65.0
+margin_left = 19.0
 margin_top = 104.0
-margin_right = -353.0
+margin_right = -424.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip2" index="0"]
-margin_top = -2.0
-margin_right = -39.0
+margin_bottom = -3.0
 text = "The Left Side Work Desks
 My computer is over here.
 No one else is here though. That's weird."
 
 [node name="Tooltip3" parent="." instance=ExtResource( 5 )]
-margin_left = 289.0
+margin_left = 270.0
 margin_top = 132.0
-margin_right = -286.0
+margin_right = -269.0
 margin_bottom = -211.0
 
 [node name="text" parent="Tooltip3" index="0"]
-margin_left = -14.75
-margin_top = -1.0434
-margin_right = 15.25
-margin_bottom = 31.9566
 text = "The Manager's Office is down here"
 
 [node name="to_right" parent="." instance=ExtResource( 3 )]
@@ -106,13 +96,26 @@ margin_bottom = 216.371
 [node name="Label" parent="to_right" index="1"]
 text = "Enter Right Side"
 
+[node name="flash" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory_hud" parent="." instance=ExtResource( 8 )]
+margin_bottom = -352.0
+
 [node name="textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="Pause" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="Light2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 339.629, 10.8988 )
+position = Vector2( 339.839, 10.6886 )
 
 [editable path="to_work_desks"]
 [editable path="to_lobby"]

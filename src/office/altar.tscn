@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/office/altar.jpg" type="Texture" id=1]
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/items/cans.png" type="Texture" id=12]
 [ext_resource path="res://assets/items/hand.png" type="Texture" id=13]
 [ext_resource path="res://assets/items/feather.png" type="Texture" id=14]
+[ext_resource path="res://src/ui/Tooltip.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
@@ -65,7 +66,11 @@ margin_right = 620.0
 margin_bottom = 220.0
 
 [node name="Label" parent="sacrifice" index="1"]
-text = "Make the Sacrifice"
+margin_left = -0.5
+margin_top = 0.5
+margin_right = -0.5
+margin_bottom = 0.5
+text = "Sacrifice (Good Idea)"
 
 [node name="flee" parent="." instance=ExtResource( 5 )]
 margin_left = 435.0
@@ -74,7 +79,7 @@ margin_right = 635.0
 margin_bottom = 380.0
 
 [node name="Label" parent="flee" index="1"]
-text = "Use Trap Door"
+text = "Use Trap Door (Bad Idea?)"
 
 [node name="title" type="Label" parent="."]
 anchor_left = 0.5
@@ -116,6 +121,25 @@ rotation = -1.39626
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 14 )
 
+[node name="Tooltip" parent="." instance=ExtResource( 15 )]
+margin_left = 246.0
+margin_top = 276.0
+margin_right = -329.0
+margin_bottom = -100.0
+
+[node name="text" parent="Tooltip" index="0"]
+text = "A feather"
+
+[node name="Tooltip2" parent="." instance=ExtResource( 15 )]
+margin_left = 460.0
+margin_top = 234.0
+margin_right = -68.0
+margin_bottom = -80.0
+
+[node name="text" parent="Tooltip2" index="0"]
+text = "A knife
+There are a few drops of blood on the blade, looks fresh"
+
 [node name="items" type="Node2D" parent="."]
 position = Vector2( 321, 227 )
 
@@ -138,3 +162,5 @@ texture = ExtResource( 13 )
 [editable path="to_right_desks"]
 [editable path="sacrifice"]
 [editable path="flee"]
+[editable path="Tooltip"]
+[editable path="Tooltip2"]

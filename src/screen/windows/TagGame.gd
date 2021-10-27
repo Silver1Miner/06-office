@@ -26,19 +26,26 @@ func _ready() -> void:
 		$Panels/Options/Cancel.disabled = false
 
 func _on_enter_pressed() -> void:
-	PlayerData.tags_completed += 1
-	if PlayerData.tags_completed >= 6:
-		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
-		$Panels/Options/Enter.disabled = true
-		$Panels/Options/Cancel.disabled = true
+	randomize()
+	if PlayerData.easy_mode or rand_range(1,10) < 7:
+		Music.play_effect(8)
+		PlayerData.tags_completed += 1
+		current += 1
+		if current >= len(displays):
+			current = 0
+		update_display(current)
+		if PlayerData.tags_completed >= 6:
+			progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6 QUOTA REACHED"
+			$Panels/Display/TextureRect.texture = null
+			tags.clear()
+			$Panels/Options/Enter.disabled = true
+			$Panels/Options/Cancel.disabled = true
+		else:
+			progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
+			$Panels/Options/Enter.disabled = false
+			$Panels/Options/Cancel.disabled = false
 	else:
-		progress.text = "PROGRESS: " + str(PlayerData.tags_completed) + "/6"
-		$Panels/Options/Enter.disabled = false
-		$Panels/Options/Cancel.disabled = false
-	current += 1
-	if current >= len(displays):
-		current = 0
-	update_display(current)
+		Music.play_effect(7)
 
 func _on_cancel_pressed() -> void:
 	tags.unselect_all()
@@ -54,10 +61,28 @@ func update_display(i: int) -> void:
 		tags.add_item(display_tags[n])
 		tags.set_item_tooltip_enabled(n, false)
 	tags.unselect_all()
-	if rand_range(0,2) > 1:
-		Music.play_effect(0)
-	else:
-		Music.play_effect(1)
+	try_text()
+
+func try_text() -> void:
+	match PlayerData.tags_completed:
+		2:
+			randomize()
+			if rand_range(1, 6) > 4:
+				text.text = "Look Behind You"
+				yield(get_tree().create_timer(1), "timeout")
+				text.text = ""
+		3:
+			randomize()
+			if rand_range(1, 6) > 4:
+				text.text = "I'm not joking, look behind you"
+				yield(get_tree().create_timer(1), "timeout")
+				text.text = ""
+		5:
+			randomize()
+			if rand_range(1, 10) > 9:
+				text.text = warnings
+				yield(get_tree().create_timer(1), "timeout")
+				text.text = ""
 
 var displays := [
 	{
@@ -90,7 +115,7 @@ var displays := [
 	},
 	{
 		"image": "res://assets/tags/maria-teneva-vf4O1OwtPnk-unsplash.jpg",
-		"tags": ["APPETIZING", "INTELLIGENT", "GRAVITY", "ORBIT"],
+		"tags": ["APPETIZING", "GRAVITY", "ORBIT"],
 	},
 	{
 		"image": "res://assets/tags/molly-blackbird-WvXPoIKsmOM-unsplash.jpg",

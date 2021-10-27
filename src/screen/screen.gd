@@ -70,5 +70,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_Timer_timeout() -> void:
-	$gnome.visible = true
+	randomize()
+	if rand_range(1,6) > 4:
+		$gnome.visible = true
 	Music.play_effect(5)

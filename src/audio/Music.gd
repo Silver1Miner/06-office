@@ -32,4 +32,7 @@ var effects = [
 	preload("res://assets/sound/button2.ogg"), #4
 	preload("res://assets/sound/366111__dkiller2204__indoor-footsteps.ogg"),
 	preload("res://assets/sound/confirmation_002.ogg"), #6
+	preload("res://assets/sound/483598__raclure__wrong.mp3"), #7
+	preload("res://assets/sound/538333__lionelmatthew001__correct.mp3"), #8
+	preload("res://assets/sound/502551__rvgerxini__piano-slam.mp3"), #9
 ]

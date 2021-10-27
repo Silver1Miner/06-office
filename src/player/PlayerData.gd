@@ -16,7 +16,9 @@ var has_drink = false
 var has_casserole = false
 var has_feather = false
 
+
 var easy_mode = false
+var has_not_seen = true
 var screen_switch_speed := 2
 var screen_wait_time := 0.2
 

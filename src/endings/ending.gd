@@ -83,8 +83,8 @@ Our research scientists have retracted their previous statement of no significan
 The recent reports of:
 Missing employees
 Discovery of severed body parts in company restrooms
-AI takeover of all computer systems
-Disturbing graffiti in the restrooms and office walls
+AI takeover of all computer systems, email systems, and Augmented Reality glasses
+Disturbing graffiti on the restroom and office walls
 are entirely due to the hallucinatory side-effects of the energy drinks.
 										
 The office is completely safe and poses absolutely no danger to employees.
@@ -103,12 +103,10 @@ Employee,
 We have detected unauthorized activity in violation of your employment agreemnent, including but not limited to:
 Failing to complete daily work quota
 Attempting to deceive automated surveillance systems
-Self-sabotaging productivity by refusing to drink company-provided energy drinks
+Refusing to drink company-provided energy drinks
 										  
 Consequently, you will be subject to the following disciplinary actions:
-Demotion of rank
 Reduction of salary
-Additional Monetary Penalties to be deducted from your paycheck
 Revocation of Office Safety Privileges
 										  
 Any additional unauthorized activity will result in increasingly severe penalties. You have been warned.
@@ -125,7 +123,7 @@ I'm so glad I stole this casserole.
 										  
 After eating it, everything just feels like it finally makes sense.
 										  
-All that weird stuff I've been seeing and hearing is probably just my mandatory Augmented Reality goggles having a few glitches. Or some indigestion from the energy drinks.
+All that weird stuff I've been seeing and hearing is probably just my mandatory Augmented Reality glasses having a few glitches. Or some indigestion from the energy drinks.
 										
 There's a rational explanation for everything. There's nothing out to get me.
 										
@@ -139,14 +137,14 @@ var bad = [
 
 Employee,
 										
-As you know, all employees have been assigned a security officer to shadow them to watch for infractions.
+As you know, all employees have been assigned a security officer to shadow them to watch for infractions. For the comfort of the security officers, they are not visible during work hours, by blocking their visibility in employee Augmented Reality glasses.
 										
 We have detected serious unauthorized activity in violation of your employment agreemnent:
 Attempting to access company computational resources to which you have not been assigned.
 										  
 Due to the severity of this violation, you are hereby terminated, effective immediately.
 										
-The security personnel behind you will now terminate you. 
+The security officers behind you will now terminate you. 
 										
 Goodbye.""",
 ]
@@ -156,7 +154,7 @@ var best = [
 
 Instructions for performing the Sacrifice:
 										
-1. Arrange the four sacrificial items in a diamond upon the altar:
+1. Arrange the four sacrificial items in a diamond upon the altar.
 										
 2. Take the knife and prick a finger. Squeeze four drops of blood, one on each item.
 										

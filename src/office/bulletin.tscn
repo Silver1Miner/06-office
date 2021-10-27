@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/ui/Pause.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/textbox.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/items/key.png" type="Texture" id=11]
 [ext_resource path="res://src/ui/Tooltip.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/office/newspaper.jpg" type="Texture" id=13]
+[ext_resource path="res://assets/theme/CourierPrime-Bold.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/old.jpg" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -20,17 +22,40 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 18
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 6
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
 [node name="bulletin" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -3.05176e-05
+margin_left = 0.471924
 margin_top = -0.943878
+margin_right = 0.471985
 margin_bottom = -0.943878
 theme = ExtResource( 6 )
 texture = ExtResource( 3 )
@@ -58,7 +83,7 @@ __meta__ = {
 margin_left = 230.0
 margin_top = 40.0
 margin_right = -202.0
-margin_bottom = -196.0
+margin_bottom = -198.0
 
 [node name="text" parent="Tooltip" index="0"]
 text = "Newspaper Clippings
@@ -104,7 +129,7 @@ margin_right = 1.0
 margin_bottom = -1.0
 text = "A Poster
 
-People like to hang stuff off the nail sticking out in the bottom corner"
+People like to hang stuff off the nail sticking out in the bottom corner as a  'lost and found'"
 
 [node name="to_work_desks" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -118,6 +143,38 @@ margin_bottom = -30.0
 
 [node name="Label" parent="to_work_desks" index="1"]
 text = "Turn Around"
+
+[node name="old" type="TextureRect" parent="."]
+margin_left = 227.002
+margin_top = 209.069
+margin_right = 527.002
+margin_bottom = 409.069
+rect_rotation = -2.0
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="Label" parent="old"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -120.0
+margin_right = 120.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 3 )
+text = "Your Time is Limited"
+
+[node name="bottom" type="Label" parent="old"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -66.0
+margin_top = -23.0
+margin_right = 66.0
+custom_fonts/font = SubResource( 4 )
+text = "Work Faster"
 
 [node name="textbox" parent="." instance=ExtResource( 2 )]
 
@@ -136,22 +193,7 @@ margin_right = 624.842
 margin_bottom = 302.012
 
 [node name="Label" parent="take_key" index="1"]
-text = "Take Desk Key"
-
-[node name="graffiti2" type="Label" parent="."]
-margin_left = 12.8877
-margin_top = 247.268
-margin_right = 187.888
-margin_bottom = 290.268
-rect_rotation = -1.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Si Dieu n'existait pas
-il faudrait l'inventer"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Take Skeleton Key"
 
 [node name="gnome_poster" type="ColorRect" parent="."]
 margin_left = 32.0
@@ -196,8 +238,60 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="graffiti2" type="Label" parent="."]
+margin_left = 32.7091
+margin_top = 233.11
+margin_right = 207.709
+margin_bottom = 276.11
+rect_rotation = -1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Si Dieu n'existait pas
+il faudrait l'inventer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="graffiti3" type="Label" parent="."]
+margin_left = 110.615
+margin_top = 83.9108
+margin_right = 161.615
+margin_bottom = 100.911
+rect_rotation = -5.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Can you see the cameras?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 margin_bottom = -352.0
+
+[node name="slogan" type="ColorRect" parent="."]
+margin_left = 107.508
+margin_top = 3.62996
+margin_right = 365.508
+margin_bottom = 36.63
+color = Color( 0.631373, 0.631373, 0.631373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slogan" type="Label" parent="slogan"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "WORK GIVES YOU MEANING AND PURPOSE
+LIFE IS EMPTY WITHOUT IT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

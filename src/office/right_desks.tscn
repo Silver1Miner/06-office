@@ -23,6 +23,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="inventory_hud" parent="." instance=ExtResource( 4 )]
 
 [node name="Pause" parent="." instance=ExtResource( 2 )]
@@ -69,6 +72,8 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Achievement is born
 From Sacrifice"
 align = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="to_altar"]
 [editable path="to_hallway"]

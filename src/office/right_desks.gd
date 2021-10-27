@@ -1,6 +1,10 @@
 extends TextureRect
 
 func _ready() -> void:
+	randomize()
+	$Timer.wait_time = rand_range(1, 20)
+	if rand_range(1, 10) > 6:
+		$Timer.start()
 	randomize_text()
 	if $to_altar.connect("meter_full", self, "_go_to_altar") != OK:
 		push_error("signal connect fail")
@@ -23,3 +27,7 @@ FROM SACRIFICE"""
 	else:
 		$slogan.text = """ACHIEVEMENT IS BORN
 FROM YOUR SACRIFICE"""
+
+
+func _on_Timer_timeout() -> void:
+	Music.play_effect(9)

@@ -55,28 +55,21 @@ margin_bottom = 221.341
 text = "Open Desk Drawer"
 
 [node name="Tooltip" parent="." instance=ExtResource( 3 )]
-margin_left = 213.0
+margin_left = 204.0
 margin_top = 71.0
 margin_right = -203.0
 margin_bottom = -244.0
 
 [node name="text" parent="Tooltip" index="0"]
-margin_left = -7.0
-margin_top = -2.0
-margin_right = -6.0
 text = "The Manager's trophy shelf. They're arranged slightly differently from yesterday. Does he rearrange them every day for fun? Or just touches them?"
 
 [node name="Tooltip2" parent="." instance=ExtResource( 3 )]
-margin_left = 146.0
+margin_left = 69.0
 margin_top = 164.0
 margin_right = -375.0
-margin_bottom = -159.0
+margin_bottom = -149.0
 
 [node name="text" parent="Tooltip2" index="0"]
-margin_left = -99.0
-margin_top = 4.0
-margin_right = 30.0
-margin_bottom = 22.0
 text = "The Manager's computer monitor. It's not actually connected to anything and completely for show. What does the manager even do?"
 
 [node name="Tooltip3" parent="." instance=ExtResource( 3 )]

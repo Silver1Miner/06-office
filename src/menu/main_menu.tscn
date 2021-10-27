@@ -86,7 +86,7 @@ anchor_right = 1.0
 margin_left = -115.0
 margin_right = -5.0
 margin_bottom = 19.0
-text = "v0.1.0 Demo"
+text = "v0.2.0 Demo"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,12 +95,15 @@ __meta__ = {
 visible = false
 
 [node name="Label" type="Label" parent="."]
-margin_left = 9.20367
-margin_top = 341.226
-margin_right = 150.204
-margin_bottom = 392.226
+margin_left = 7.87753
+margin_top = 304.265
+margin_right = 164.878
+margin_bottom = 391.265
 custom_fonts/font = SubResource( 2 )
-text = "Content Warning:  Jump Scares possible depending on player choices"
+text = "Content Warning:
+Potentially Disturbing Images
+ Jump Scares possible depending on player choices
+Player Discretion Advised"
 align = 1
 autowrap = true
 __meta__ = {

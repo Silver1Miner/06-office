@@ -5,6 +5,7 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_desk_drawer.connect("meter_full", self, "_go_to_drawer") != OK:
 		push_error("signal connect fail")
+	$gnome.visible = (PlayerData.has_gaslight and PlayerData.tags_completed >= 6)
 	if PlayerData.has_key and !PlayerData.has_gaslight:
 		$to_desk_drawer.visible = true
 	else:

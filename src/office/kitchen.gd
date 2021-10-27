@@ -7,6 +7,7 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $take_casserole.connect("meter_full", self, "_take_casserole") != OK:
 		push_error("signal connect fail")
+	$gnome.visible = (PlayerData.tags_completed >= 6)
 	update_view()
 	$textbox.initialize(["The office kitchen. A place to eat and drink."])
 
