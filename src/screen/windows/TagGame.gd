@@ -26,6 +26,7 @@ func _ready() -> void:
 		$Panels/Options/Cancel.disabled = false
 
 func _on_enter_pressed() -> void:
+	$invalid.visible = false
 	randomize()
 	if PlayerData.easy_mode or rand_range(1,10) < 7:
 		Music.play_effect(8)
@@ -46,6 +47,7 @@ func _on_enter_pressed() -> void:
 			$Panels/Options/Cancel.disabled = false
 	else:
 		Music.play_effect(7)
+		$invalid.visible = true
 
 func _on_cancel_pressed() -> void:
 	tags.unselect_all()

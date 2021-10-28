@@ -17,7 +17,7 @@ func _ready() -> void:
 		$hack_computer.visible = false
 	#if screen.connect("exit_screen", self, "_on_screen_exit") != OK:
 	#	push_error("signal connect fail")
-	$textbox.initialize(["My work area. Where is everybody?"])
+	$textbox.initialize(["My work area. Nobody else is here."])
 
 func select_background() -> void:
 	randomize()

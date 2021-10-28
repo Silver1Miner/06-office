@@ -21,23 +21,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="to_work_desks" parent="." instance=ExtResource( 3 )]
-margin_left = 20.0
-margin_top = 200.0
-margin_right = 220.0
-margin_bottom = 220.0
+[node name="gnome" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.168627 )
+position = Vector2( 499.616, 270.937 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
 
-[node name="Label" parent="to_work_desks" index="1"]
-text = "Enter Work Area"
-
-[node name="to_lobby" parent="." instance=ExtResource( 3 )]
-margin_left = 237.495
-margin_top = 350.888
-margin_right = 437.495
-margin_bottom = 370.888
-
-[node name="Label" parent="to_lobby" index="1"]
-text = "Go to Lobby"
+[node name="textbox" parent="." instance=ExtResource( 4 )]
 
 [node name="to_office" parent="." instance=ExtResource( 3 )]
 anchor_left = 0.5
@@ -50,11 +40,23 @@ margin_bottom = 100.0
 [node name="Label" parent="to_office" index="1"]
 text = "Enter Manager's Office"
 
-[node name="gnome" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.168627 )
-position = Vector2( 499.616, 270.937 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 7 )
+[node name="to_lobby" parent="." instance=ExtResource( 3 )]
+margin_left = 237.495
+margin_top = 350.888
+margin_right = 437.495
+margin_bottom = 370.888
+
+[node name="Label" parent="to_lobby" index="1"]
+text = "Go to Lobby"
+
+[node name="to_work_desks" parent="." instance=ExtResource( 3 )]
+margin_left = 20.0
+margin_top = 200.0
+margin_right = 220.0
+margin_bottom = 220.0
+
+[node name="Label" parent="to_work_desks" index="1"]
+text = "Enter Work Area"
 
 [node name="Tooltip" parent="." instance=ExtResource( 5 )]
 margin_left = 426.0
@@ -109,17 +111,15 @@ __meta__ = {
 [node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 margin_bottom = -352.0
 
-[node name="textbox" parent="." instance=ExtResource( 4 )]
+[node name="Light2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 339.839, 10.6886 )
 
 [node name="Pause" parent="." instance=ExtResource( 6 )]
 visible = false
 
-[node name="Light2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 339.839, 10.6886 )
-
-[editable path="to_work_desks"]
-[editable path="to_lobby"]
 [editable path="to_office"]
+[editable path="to_lobby"]
+[editable path="to_work_desks"]
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
 [editable path="Tooltip3"]

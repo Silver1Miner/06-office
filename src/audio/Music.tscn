@@ -14,3 +14,4 @@ bus = "Sound"
 
 [node name="Sheperd" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
+bus = "Music"

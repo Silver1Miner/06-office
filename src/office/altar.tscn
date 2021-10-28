@@ -35,13 +35,10 @@ __meta__ = {
 
 [node name="inventory_hud" parent="." instance=ExtResource( 4 )]
 
-[node name="Pause" parent="." instance=ExtResource( 2 )]
-visible = false
-
 [node name="textbox" parent="." instance=ExtResource( 3 )]
 
 [node name="218px-Crowley_unicursal_hexagramsvg" type="Sprite" parent="."]
-position = Vector2( 320.013, 89.5656 )
+position = Vector2( 320, 150 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 7 )
 
@@ -85,13 +82,13 @@ text = "Use Trap Door (Bad Idea?)"
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -97.0
+margin_top = 70.0
 margin_right = 97.0
-margin_bottom = 60.0
+margin_bottom = 109.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "
-ALL GODS DEMAND SACRIFICE
+text = "ALL GODS DEMAND SACRIFICE
 EVEN THE ONES WE CREATED"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -140,6 +137,16 @@ margin_bottom = -80.0
 text = "A knife
 There are a few drops of blood on the blade, looks fresh"
 
+[node name="Tooltip3" parent="." instance=ExtResource( 15 )]
+margin_left = 184.0
+margin_top = 67.0
+margin_right = -172.0
+margin_bottom = -279.0
+
+[node name="text" parent="Tooltip3" index="0"]
+text = "If God is capable of doing everything Himself, why create Man?
+Perhaps only to worship Him."
+
 [node name="items" type="Node2D" parent="."]
 position = Vector2( 321, 227 )
 
@@ -159,8 +166,12 @@ rotation = -1.40848
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 13 )
 
+[node name="Pause" parent="." instance=ExtResource( 2 )]
+visible = false
+
 [editable path="to_right_desks"]
 [editable path="sacrifice"]
 [editable path="flee"]
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
+[editable path="Tooltip3"]

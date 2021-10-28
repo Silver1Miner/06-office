@@ -10,7 +10,7 @@ func _ready() -> void:
 		push_error("signal connect fail")
 	if $to_hallway.connect("meter_full", self, "_go_to_hallway") != OK:
 		push_error("signal connect fail")
-	$textbox.initialize(["The right side work area. Where is everybody?"])
+	$textbox.initialize(["The right side work area. Nobody is here."])
 
 func _go_to_hallway() -> void:
 	if get_tree().change_scene_to(PlayerData.hallway_dir) != OK:

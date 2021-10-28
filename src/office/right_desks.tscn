@@ -28,9 +28,6 @@ one_shot = true
 
 [node name="inventory_hud" parent="." instance=ExtResource( 4 )]
 
-[node name="Pause" parent="." instance=ExtResource( 2 )]
-visible = false
-
 [node name="textbox" parent="." instance=ExtResource( 3 )]
 margin_left = -11.3137
 margin_top = -99.2929
@@ -72,6 +69,9 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Achievement is born
 From Sacrifice"
 align = 1
+
+[node name="Pause" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

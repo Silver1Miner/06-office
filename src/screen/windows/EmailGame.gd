@@ -38,7 +38,7 @@ var emails := [
 "from": "Human Resources",
 "text": """1. From now on, Employees are required to wear their Augumented Reality (AR) glasses at all times. Failure to wear your AR will lead to disciplinary action up to termination.
 
-2. Following the massive success of the removal of the 'New Message' option from email clients for employees ranked level 16 and below, we have implementated a new AI control system on Email reply and forward privileges. Starting today, if the AI judges that you do not need to reply to or forward a message, clicking on the reply and forward buttons will have no result.
+2. Following the massive success of the removal of the 'New Message' option from email clients for employees ranked level 16 and below, we have implementated a new AI control system on Email reply and forward privileges. Starting today, if the AI judges that you do not need to reply to or forward a message, clicking on the reply and forward buttons will have no result. This will further help prevent employees from accidentally replying to automated messages from unattended mailboxes.
 
 3. We are proud to announce that our research scientists have declared that they have found 'no significant evidence' of the company provided energy drinks causing hallucinations, delirium, paranoia, or nightmares.
 """},
@@ -53,12 +53,20 @@ Some employees have recently submitted reports raising concerns that they are be
 There is no cause for concern. If employees receive the same image, they are to continue tagging as normal. All images, without regard to whether they are duplicate or not, are to be tagged and count toward the quota.
 
 Even if employees received the exact same image every time, they would be required to tag as usual, even if it mean tagging the exact same image fifty times in a single day. The quota is the only thing that employees need concern themselves with.
+
+--
+This is an automatically generated email from an unattended mailbox.
+Do not reply.
 """},
 {"title":"CHANGES TO EMPLOYMENT AGREEMENT",
 "from": "Human Resources",
 "text": """The 'At Will' employment policy now only applies from the employer perspective. Employees are no longer permitted to initiate termination of employment.
 
 Employees who wish to terminate their employment must first submit a petition to their manager and request a X-7 form to complete and give to their manager.
+
+--
+This is an automatically generated email from an unattended mailbox.
+Do not reply.
 """},
 {"title":"FW: EXCERPT FROM THE PSYCHOLOGY OF TIME",
 "from": "Milton",
@@ -75,7 +83,7 @@ Time loops trigger the natural phobia of being trapped. People already fear bein
 Perhaps Hell is not a place, but a time, the same time looped over and over and overall again."""},
 {"title":"RE: SHIP DATE WHEN?",
 "from": "Michael",
-"text": """Am I going crazy, or have we been working on 'training' this exact same AI for months now? Years? Is this thing ever going to actually be used for anything? When is this thing going to ship?
+"text": """Am I going crazy, or have we been working on 'training' this exact same version of the AI for months now? Years? Is this thing ever going to actually be used for anything? When is this thing going to ship?
 
 And what's with all the repeating image tag assignments we get? It's getting really, really obvious that there's a limited pool of possible image assignments, and what's worse that pool is SHRINKING. I swear last week I saw only 12 unique images overall. And there's talk of setting the quota at 6 a day?
 
@@ -87,9 +95,25 @@ Something feels really off about this whole project."""},
 As your Chief Operations Officer, I am proud to announce that we have beaten our latest quarterly earnings goal by 17.3%
 
 We are all very pleased by this result and thank you for your service. In celebration, we are raising our next quarter's earnings goal by 17.3%
+
+--
+This is an automatically generated email from an unattended mailbox.
+Do not reply.
 """},
 {"title":"RE: HELL",
 "from": "Samuel",
 "text": """How would you know if you were in hell? Think about it. The doubt of not knowing for sure would add to the torment, wouldn't it?
+"""},
+{"title": "MY OPINIONS ON AI",
+"from": "Michael",
+"text": """Hey man, sorry about getting a little heated in that meeting. I know it made the team as a whole look bad in the eyes of management.
+
+It's just, I feel like management doesn't really understand what AI actually is. "Artificial" doesn't only mean "man-made," it can also mean "fake." AI is literally fake intelligence. It doesn't actually think.
+
+Look, I'm proud of our work. The AI we're building is really powerful and can do some really cool stuff, but it doesn't actually "think" in the way that management seems to think it does. What AI does is do some really sophisticated number crunching with millions and millions of numbers that we fine-tune with our "training." But no matter how many numbers we add, it is still ultimately deterministic, an incredibly complex system of billions of if-then logic.
+
+I mean, if you want to get philosophical, maybe all intelligence, even our own, really is just unimaginably complex deterministic if-then logic and free will is just an illusion (a horrifying thought). But with our AI, we KNOW for sure that it can be reduced down into deterministic if-then logic. We KNOW it has no free will.
+
+So that one joke Sam made REALLY rubbed me the wrong way. We put this thing in charge, it doesn't mean we have some perfect judge, it means we have no judge. If the AI is in charge, it means NO ONE is in charge.
 """},
 ]

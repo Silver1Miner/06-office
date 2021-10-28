@@ -29,6 +29,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="textbox" parent="." instance=ExtResource( 5 )]
+visible = false
+
 [node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 margin_bottom = -352.0
 
@@ -81,17 +84,14 @@ margin_bottom = -125.0
 [node name="text" parent="Tooltip3" index="0"]
 text = "Manager's Locked Desk Drawers. Needs a Key."
 
-[node name="textbox" parent="." instance=ExtResource( 5 )]
-visible = false
-
-[node name="Pause" parent="." instance=ExtResource( 6 )]
-visible = false
-
 [node name="gnome" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.407843 )
 position = Vector2( 419.803, 100.834 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
+
+[node name="Pause" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [editable path="to_hallway"]
 [editable path="to_desk_drawer"]

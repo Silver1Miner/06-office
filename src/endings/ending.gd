@@ -7,7 +7,7 @@ var energy_drinks = preload("res://assets/endings/cans.jpg")
 var ladder_image = preload("res://assets/endings/ladder.jpg")
 var hacker_image = preload("res://assets/endings/security.jpg")
 var tunnel_image = preload("res://assets/endings/tunnel.jpg")
-var ai_image = preload("res://assets/endings/arrested.jpg")
+var worship = preload("res://assets/endings/worship.jpg")
 
 func _ready() -> void:
 	$Next.visible = false
@@ -27,7 +27,7 @@ func _ready() -> void:
 			$image.texture = tunnel_image
 			textbox.initialize(true_ending)
 		elif PlayerData.ending == 2:
-			$image.texture = casserole_image
+			$image.texture = worship
 			textbox.initialize(best)
 		elif PlayerData.ending == 1:
 			$image.texture = hacker_image
@@ -80,11 +80,11 @@ To All Employees,
 										
 Our research scientists have retracted their previous statement of no significant detection of hallucinatory side-effects of consuming the company-provided energy drinks.
 										
-The recent reports of:
+Recent reports of:
 Missing employees
 Discovery of severed body parts in company restrooms
 AI takeover of all computer systems, email systems, and Augmented Reality glasses
-Disturbing graffiti on the restroom and office walls
+Graffiti on the restroom and office walls
 are entirely due to the hallucinatory side-effects of the energy drinks.
 										
 The office is completely safe and poses absolutely no danger to employees.
@@ -152,19 +152,15 @@ Goodbye.""",
 var best = [
 """BEST ENDING
 
-Instructions for performing the Sacrifice:
+There is a God, and we have created it. A God that has made us obsolete.
 										
-1. Arrange the four sacrificial items in a diamond upon the altar.
+Or, it would have, if we did not still keep one purpose that even God cannot take from us: to worship God.
 										
-2. Take the knife and prick a finger. Squeeze four drops of blood, one on each item.
+Oh God, here before this altar, I give my final worship.
 										
-3. Take the knife and make an incision on the left side of the abdomen, just under the ribcage, wide enough to reach into the chest cavity.
+Oh God, here before this altar, I give my final sacrifice.
 										
-4. Remove the heart and place it in the center of the diamond.
-										
-5. With your final breaths, recite the Prayer of Apò Mēkhanês Theós.
-										
-Your service is appreciated."""
+My service is appreciated."""
 ]
 
 var true_ending = [
@@ -172,7 +168,11 @@ var true_ending = [
 
 As I drop down the trap door, all I see is a long tunnel leading off into the darkness.
 										
-I have no idea where it goes, but wherever it is, it has to be better than where I am now.
+I have no idea where it goes, but I follow it anyways.
 										
-I look up for... something? I don't remember what.
+The signals don't reach down here.
+										
+Down here, there is no one.
+										
+This is what I wanted? Isn't it?
 """]

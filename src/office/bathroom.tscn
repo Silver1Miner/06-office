@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/theme/MyBleedingScars-B0J5.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="DynamicFont" id=1]
-size = 5
+size = 6
 font_data = ExtResource( 9 )
 
 [node name="bathroom" type="TextureRect"]
@@ -29,15 +29,6 @@ __meta__ = {
 [node name="inventory_hud" parent="." instance=ExtResource( 7 )]
 margin_bottom = -352.0
 
-[node name="to_lobby" parent="." instance=ExtResource( 1 )]
-margin_left = 224.5
-margin_top = 330.073
-margin_right = 424.5
-margin_bottom = 350.073
-
-[node name="Label" parent="to_lobby" index="1"]
-text = "Exit to Lobby"
-
 [node name="get_finger" parent="." instance=ExtResource( 1 )]
 margin_left = 32.5
 margin_top = 260.073
@@ -49,8 +40,14 @@ text = "Take Thing in Urinal"
 
 [node name="textbox" parent="." instance=ExtResource( 2 )]
 
-[node name="Pause" parent="." instance=ExtResource( 3 )]
-visible = false
+[node name="to_lobby" parent="." instance=ExtResource( 1 )]
+margin_left = 224.5
+margin_top = 330.073
+margin_right = 424.5
+margin_bottom = 350.073
+
+[node name="Label" parent="to_lobby" index="1"]
+text = "Exit to Lobby"
 
 [node name="gnome" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.294118 )
@@ -74,7 +71,7 @@ text = "Use Back Exit"
 [node name="graffiti" type="Label" parent="."]
 margin_left = 5.0
 margin_top = 203.0
-margin_right = 85.0
+margin_right = 109.0
 margin_bottom = 261.0
 rect_rotation = -3.0
 custom_fonts/font = SubResource( 1 )
@@ -87,6 +84,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[editable path="to_lobby"]
+[node name="Pause" parent="." instance=ExtResource( 3 )]
+visible = false
+
 [editable path="get_finger"]
+[editable path="to_lobby"]
 [editable path="to_secret_exit"]

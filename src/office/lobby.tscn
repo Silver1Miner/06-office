@@ -55,12 +55,12 @@ I never drink the stuff."
 [node name="Tooltip2" parent="." instance=ExtResource( 5 )]
 margin_left = 56.0
 margin_top = 202.0
-margin_right = -449.0
-margin_bottom = -141.002
+margin_right = -394.0
+margin_bottom = -146.002
 
 [node name="text" parent="Tooltip2" index="0"]
-text = "Some Board Games
-Can't play while on the clock though"
+text = "Lobby Bookshelf
+The books are all fake and only for show."
 
 [node name="Tooltip3" parent="." instance=ExtResource( 5 )]
 margin_left = 509.261
@@ -78,15 +78,11 @@ Someone left their casserole in here. Again. This one's still warm."
 
 [node name="Tooltip4" parent="." instance=ExtResource( 5 )]
 margin_left = 203.0
-margin_top = 150.0
+margin_top = 137.0
 margin_right = -394.0
-margin_bottom = -184.002
+margin_bottom = -196.002
 
 [node name="text" parent="Tooltip4" index="0"]
-margin_left = 4.77046
-margin_top = 1.12247
-margin_right = 4.77046
-margin_bottom = 4.12091
 text = "The Office Mascot Gnome"
 
 [node name="Tooltip5" parent="." instance=ExtResource( 5 )]
@@ -97,6 +93,8 @@ margin_top = 71.0
 margin_top = -5.61234
 margin_bottom = -5.61234
 text = "The Office Slogan"
+
+[node name="textbox" parent="." instance=ExtResource( 2 )]
 
 [node name="to_hallway" parent="." instance=ExtResource( 4 )]
 margin_left = 240.0
@@ -142,11 +140,6 @@ margin_bottom = 120.0
 [node name="Label" parent="to_kitchen" index="1"]
 text = "Go to Kitchen"
 
-[node name="textbox" parent="." instance=ExtResource( 2 )]
-
-[node name="Pause" parent="." instance=ExtResource( 6 )]
-visible = false
-
 [node name="gnome" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.505882 )
 position = Vector2( 217.492, 179.293 )
@@ -155,6 +148,9 @@ texture = ExtResource( 7 )
 
 [node name="inventory_hud" parent="." instance=ExtResource( 8 )]
 margin_bottom = -352.002
+
+[node name="Pause" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [editable path="Tooltip"]
 [editable path="Tooltip2"]

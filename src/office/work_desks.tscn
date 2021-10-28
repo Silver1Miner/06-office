@@ -39,6 +39,8 @@ margin_bottom = -107.0
 [node name="text" parent="Tooltip2" index="0"]
 text = "They installed biometric locks on the computers. No more hacking co-worker's computers for a prank. Unless you have their severed finger."
 
+[node name="textbox" parent="." instance=ExtResource( 4 )]
+
 [node name="to_hallway" parent="." instance=ExtResource( 2 )]
 margin_left = 420.0
 margin_top = 50.0
@@ -79,14 +81,12 @@ margin_bottom = 305.0
 [node name="Label" parent="hack_computer" index="1"]
 text = "Hack Computer (BAD IDEA)"
 
-[node name="textbox" parent="." instance=ExtResource( 4 )]
-
-[node name="Pause" parent="." instance=ExtResource( 7 )]
-visible = false
-
 [node name="footsteps" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 617.915, 369.29 )
 bus = "Sound"
+
+[node name="Pause" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [editable path="Tooltip"]
 [editable path="Tooltip2"]
