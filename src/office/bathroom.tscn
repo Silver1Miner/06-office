@@ -50,7 +50,7 @@ margin_bottom = 350.073
 text = "Exit to Lobby"
 
 [node name="gnome" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0.294118 )
+self_modulate = Color( 1, 1, 1, 0.156863 )
 position = Vector2( 76.5001, 63.5731 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )

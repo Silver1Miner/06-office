@@ -30,4 +30,6 @@ FROM YOUR SACRIFICE"""
 
 
 func _on_Timer_timeout() -> void:
-	Music.play_effect(9)
+	if PlayerData.has_not_heard:
+		PlayerData.has_not_heard = false
+		Music.play_effect(9)

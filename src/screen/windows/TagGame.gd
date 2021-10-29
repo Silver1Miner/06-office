@@ -53,6 +53,8 @@ func _on_cancel_pressed() -> void:
 	tags.unselect_all()
 
 func update_display(i: int) -> void:
+	if PlayerData.tags_completed >= 6:
+		return
 	if displays[i]["image"] != "":
 		image.texture = load(displays[i]["image"])
 	#text.bbcode_text = displays[i]["text"]
@@ -69,13 +71,13 @@ func try_text() -> void:
 	match PlayerData.tags_completed:
 		2:
 			randomize()
-			if rand_range(1, 6) > 4:
+			if !PlayerData.has_key:
 				text.text = "Look Behind You"
 				yield(get_tree().create_timer(1), "timeout")
 				text.text = ""
 		3:
 			randomize()
-			if rand_range(1, 6) > 4:
+			if !PlayerData.has_key:
 				text.text = "I'm not joking, look behind you"
 				yield(get_tree().create_timer(1), "timeout")
 				text.text = ""

@@ -6,7 +6,7 @@ var current_emails := 3
 var first_play := ""
 var tags_completed := 0
 var current_job_level := 0
-var ending := 0
+var ending := -1
 
 # Inventory
 var has_gaslight = false
@@ -19,6 +19,7 @@ var has_feather = false
 
 var easy_mode = false
 var has_not_seen = true
+var has_not_heard = true
 var screen_switch_speed := 2
 var screen_wait_time := 0.2
 

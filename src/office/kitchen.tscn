@@ -28,6 +28,34 @@ __meta__ = {
 
 [node name="inventory_hud" parent="." instance=ExtResource( 2 )]
 
+[node name="Tooltip" parent="." instance=ExtResource( 7 )]
+margin_left = 250.0
+margin_top = 135.0
+margin_right = -188.0
+margin_bottom = -202.0
+
+[node name="text" parent="Tooltip" index="0"]
+margin_bottom = -8.0
+text = "The Microwave Casserole smells pretty good, actually."
+
+[node name="Tooltip2" parent="." instance=ExtResource( 7 )]
+margin_left = 149.0
+margin_top = 235.0
+margin_right = -249.0
+margin_bottom = -90.0
+
+[node name="text" parent="Tooltip2" index="0"]
+text = "The table smells like disinfectant and bleach. Maybe someone spilled energy drink."
+
+[node name="eat" parent="." instance=ExtResource( 3 )]
+margin_left = 300.0
+margin_top = 200.0
+margin_right = 500.0
+margin_bottom = 220.0
+
+[node name="Label" parent="eat" index="1"]
+text = "Eat and Drink (Good Idea)"
+
 [node name="take_casserole" parent="." instance=ExtResource( 3 )]
 margin_left = 250.0
 margin_top = 100.0
@@ -35,7 +63,7 @@ margin_right = 450.0
 margin_bottom = 120.0
 
 [node name="Label" parent="take_casserole" index="1"]
-text = "Take Microwave Casserole"
+text = "Steal Microwave Casserole"
 
 [node name="get_drink" parent="." instance=ExtResource( 3 )]
 margin_left = 250.0
@@ -57,28 +85,6 @@ text = "Go to Lobby"
 
 [node name="textbox" parent="." instance=ExtResource( 5 )]
 
-[node name="Pause" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="Tooltip" parent="." instance=ExtResource( 7 )]
-margin_left = 250.0
-margin_top = 135.0
-margin_right = -188.0
-margin_bottom = -202.0
-
-[node name="text" parent="Tooltip" index="0"]
-margin_bottom = -8.0
-text = "The Microwave Casserole is still in there. Smells pretty good, actually."
-
-[node name="Tooltip2" parent="." instance=ExtResource( 7 )]
-margin_left = 149.0
-margin_top = 235.0
-margin_right = -249.0
-margin_bottom = -90.0
-
-[node name="text" parent="Tooltip2" index="0"]
-text = "The table smells like disinfectant and bleach. Maybe someone spilled energy drink."
-
 [node name="slogan" type="Label" parent="."]
 margin_left = 166.0
 margin_top = 165.5
@@ -96,8 +102,12 @@ rotation = -0.122173
 scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 9 )
 
+[node name="Pause" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[editable path="Tooltip"]
+[editable path="Tooltip2"]
+[editable path="eat"]
 [editable path="take_casserole"]
 [editable path="get_drink"]
 [editable path="to_lobby"]
-[editable path="Tooltip"]
-[editable path="Tooltip2"]

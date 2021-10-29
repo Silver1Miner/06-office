@@ -8,7 +8,7 @@ const MAX_VALUE = 10000000
 func _ready() -> void:
 	randomize()
 	value = randi() % MAX_VALUE
-	noise.period = 8
+	noise.period = 4
 
 func _physics_process(_delta: float) -> void:
 	value += 0.5

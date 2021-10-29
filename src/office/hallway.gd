@@ -10,11 +10,11 @@ func _ready() -> void:
 	if $to_right.connect("meter_full", self, "_go_to_right") != OK:
 		push_error("signal connect fail")
 	if PlayerData.has_key:
+		$Light2D.enabled = true
 		$to_right.visible = true
 	else:
 		$to_right.visible = false
-	if PlayerData.has_gaslight:
-		$Light2D.enabled = true
+	if PlayerData.has_finger:
 		if PlayerData.has_not_seen and !PlayerData.easy_mode:
 			try_flash()
 	else:

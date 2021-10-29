@@ -32,7 +32,7 @@ func _ready() -> void:
 		elif PlayerData.ending == 1:
 			$image.texture = hacker_image
 			textbox.initialize(bad)
-		elif PlayerData.has_casserole:
+		elif PlayerData.ending == 0:
 			$image.texture = casserole_image
 			textbox.initialize(good)
 		elif PlayerData.tags_completed >= 6:
@@ -144,7 +144,7 @@ Attempting to access company computational resources to which you have not been 
 										  
 Due to the severity of this violation, you are hereby terminated, effective immediately.
 										
-The security officers behind you will now terminate you. 
+The security officer behind you will now terminate you. 
 										
 Goodbye.""",
 ]
@@ -172,7 +172,7 @@ I have no idea where it goes, but I follow it anyways.
 										
 The signals don't reach down here.
 										
-Down here, there is no one.
+Down here, God's watchful eyes do not reach. Down here, there is no one.
 										
-This is what I wanted? Isn't it?
+This is what I wanted?       Isn't it?
 """]

@@ -84,7 +84,7 @@ margin_right = 220.0
 margin_bottom = 183.0
 rect_min_size = Vector2( 220, 140 )
 text = "INSTRUCTIONS:
-Select tags from the tag pool. Hold CTRL to select multiple tags. Click ENTER to submit or CANCEL to reset.
+Select tags from the pool below the image. Hold CTRL to select multiple tags. Click ENTER to submit or CANCEL to reset.
 Your work will be verified against that of co-workers and earlier iterations of the AI."
 align = 3
 autowrap = true

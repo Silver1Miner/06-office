@@ -10,6 +10,10 @@ func _ready() -> void:
 	if PlayerData.has_key:
 		$key.visible = false
 		$take_key.visible = false
+	if rand_range(0,3) < 2:
+		$gnome_poster.rect_rotation = 5
+	else:
+		$gnome_poster.rect_rotation = -2
 	$textbox.initialize(["The back wall. Sometimes people post or write things here."])
 
 func _go_to_desks() -> void:

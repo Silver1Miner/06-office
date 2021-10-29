@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	PlayerData.current_level = 0
-	PlayerData.ending = 0
+	PlayerData.ending = -1
 	PlayerData.tags_completed = 0
 	PlayerData.reset_items()
 	Music.play_track(1)
