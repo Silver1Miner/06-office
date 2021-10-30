@@ -17,29 +17,44 @@ func _ready() -> void:
 	if PlayerData.current_level == 0:
 		next_level = "res://src/office/lobby.tscn"
 		randomize()
-		if rand_range(1,6) < 4:
-			textbox.initialize(intro_text)
-		else:
-			textbox.initialize(intro_text_2)
+		match PlayerData.last_ending:
+			-2: # default and poor ending (didn't do job)
+				textbox.initialize(intro_text)
+			-1: # standard ending (did job)
+				textbox.initialize(intro_text_2)
+			0: # good ending
+				textbox.initialize(intro_good)
+			1: # bad ending
+				textbox.initialize(intro_hacker)
+			2: # best ending
+				textbox.initialize(intro_worship)
+			3: # true ending
+				textbox.initialize(intro_escape)
 	else:
 		next_level = "res://src/menu/main_menu.tscn"
 		if PlayerData.ending == 3:
+			PlayerData.last_ending = 3
 			$image.texture = tunnel_image
 			textbox.initialize(true_ending)
 		elif PlayerData.ending == 2:
+			PlayerData.last_ending = 2
 			$image.texture = worship
 			textbox.initialize(best)
 		elif PlayerData.ending == 1:
+			PlayerData.last_ending = 1
 			$image.texture = hacker_image
 			textbox.initialize(bad)
 		elif PlayerData.ending == 0:
+			PlayerData.last_ending = 0
 			$image.texture = casserole_image
 			textbox.initialize(good)
 		elif PlayerData.tags_completed >= 6:
+			PlayerData.last_ending = -1
 			$image.texture = energy_drinks
 			textbox.initialize(standard)
 		else:
 			$image.texture = ladder_image
+			PlayerData.last_ending = -2
 			textbox.initialize(poor)
 
 func _on_text_finished() -> void:
@@ -60,7 +75,6 @@ The same thing every day. Go in. Go to my computer. Do the tasks I've been assig
 										
 Sometimes, I just wish something unexpected would happen."""
 ]
-
 var intro_text_2 = [
 """Another day at work.
 										   
@@ -72,18 +86,48 @@ They needed to reroute the electricity to something else, they said.
 										
 The same thing every day. Go in. Go to my computer. Do the tasks I've been assigned. Leave."""
 ]
+var intro_good = ["""Another day at work.
+										   
+I don't remember how long I've had this job, but I like it. I do important work here.
+										
+Not much changes. Last time anything different happened was when they replaced the electric lights with gas lights.
+										
+The same thing every day. Go in. Go to my computer. Do the tasks I've been assigned. Leave.
+"""]
+var intro_hacker = ["""I had a nightmare last night.
+										   
+I did something I shouldn't have, and was punished for it. It felt so real.
+										
+Well, back to work. Go in. Go to my computer. Do the tasks I've been assigned. Leave.
+										  
+Last time anything different happened was when they replaced the electric lights with gas lights.
+										  
+They needed to reroute the electricity to something else, they said."""]
+var intro_worship = ["""I had a wonderful dream last night. It was about work.
+										   
+I don't remember how long I've had this job, but I like it. I do important work here.
+										
+Not much changes. Last time anything different happened was when they replaced the electric lights with gas lights.
+										
+The same thing every day. Go in. Go to my computer. Do the tasks I've been assigned. Leave."""]
+var intro_escape = ["""HA HA HA HA HA HA HA HA
+										
+I had a chance. I could have broken the cycle.
+										
+And yet here I am. Back in the office. All over again.
+										
+I chose to come back."""]
 
 var standard = [
 """STANDARD ENDING
 
 To All Employees,
 										
-Our research scientists have retracted their previous statement of no significant detection of hallucinatory side-effects of consuming the company-provided energy drinks.
-										
+Our research scientists have retracted their previous statement of no detection of hallucinatory side-effects of consuming company-provided energy drinks.
 Recent reports of:
 Missing employees
 Discovery of severed body parts in company restrooms
-AI takeover of all computer systems, email systems, and Augmented Reality glasses
+AI takeover of all computer systems, email systems, and AR glasses
 Graffiti on the restroom and office walls
 are entirely due to the hallucinatory side-effects of the energy drinks.
 										
@@ -123,7 +167,7 @@ I'm so glad I stole this casserole.
 										  
 After eating it, everything just feels like it finally makes sense.
 										  
-All that weird stuff I've been seeing and hearing is probably just my mandatory Augmented Reality glasses having a few glitches. Or some indigestion from the energy drinks.
+All that weird stuff I've been seeing and hearing is probably just my Augmented Reality glasses having a few glitches. Or some indigestion from the energy drinks.
 										
 There's a rational explanation for everything. There's nothing out to get me.
 										
@@ -172,7 +216,8 @@ I have no idea where it goes, but I follow it anyways.
 										
 The signals don't reach down here.
 										
-Down here, God's watchful eyes do not reach. Down here, there is no one.
+Down here, God's watchful eyes do not reach. Down here, there is no God.
 										
-This is what I wanted?       Isn't it?
-"""]
+This is what I wanted?
+										
+Isn't it?"""]

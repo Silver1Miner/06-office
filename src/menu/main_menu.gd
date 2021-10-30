@@ -19,6 +19,7 @@ func _on_new_game_pressed() -> void:
 	PlayerData.current_level = 0
 	PlayerData.ending = -1
 	PlayerData.tags_completed = 0
+	PlayerData.screen_switch_speed = 2
 	PlayerData.reset_items()
 	Music.play_track(1)
 	if get_tree().change_scene("res://src/endings/ending.tscn") != OK:

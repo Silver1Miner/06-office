@@ -70,23 +70,27 @@ func update_display(i: int) -> void:
 func try_text() -> void:
 	match PlayerData.tags_completed:
 		2:
-			randomize()
-			if !PlayerData.has_key:
+			if PlayerData.has_not_taken_key:
 				text.text = "Look Behind You"
 				yield(get_tree().create_timer(1), "timeout")
 				text.text = ""
 		3:
-			randomize()
-			if !PlayerData.has_key:
+			if PlayerData.has_not_taken_key:
 				text.text = "I'm not joking, look behind you"
 				yield(get_tree().create_timer(1), "timeout")
 				text.text = ""
 		5:
 			randomize()
-			if rand_range(1, 10) > 9:
-				text.text = warnings
-				yield(get_tree().create_timer(1), "timeout")
+			if PlayerData.has_not_taken_key and rand_range(1,4) > 2:
+				text.text = tell_get_key
+				yield(get_tree().create_timer(0.5), "timeout")
 				text.text = ""
+			else:
+				randomize()
+				if rand_range(1, 10) > 9:
+					text.text = warnings
+					yield(get_tree().create_timer(1), "timeout")
+					text.text = ""
 
 var displays := [
 	{
@@ -158,6 +162,14 @@ var displays := [
 		"tags": ["PARTY", "HARD", "DRINK", "ALL"],
 	},
 ]
+
+var tell_get_key := """Stop ignoring me
+It's right behind you
+Stop ignoring me
+It's right behind you
+Stop ignoring me
+It's right behind you
+"""
 
 var warnings := """No one else is here you know
 Don't ignore me

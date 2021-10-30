@@ -3,10 +3,9 @@ extends Node
 var current_tag := 0
 var current_level := 0
 var current_emails := 3
-var first_play := ""
 var tags_completed := 0
-var current_job_level := 0
 var ending := -1
+var last_ending := -2
 
 # Inventory
 var has_gaslight = false
@@ -20,8 +19,9 @@ var has_feather = false
 var easy_mode = false
 var has_not_seen = true
 var has_not_heard = true
+var has_not_drunk = true
+var has_not_taken_key = true
 var screen_switch_speed := 2
-var screen_wait_time := 0.2
 
 var main_menu = preload("res://src/menu/main_menu.tscn")
 var work_desks_dir = preload("res://src/office/work_desks.tscn")

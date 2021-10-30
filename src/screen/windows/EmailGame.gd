@@ -80,7 +80,7 @@ Human psychology is very dependent on narratives, particularly linear narratives
 
 Time loops trigger the natural phobia of being trapped. People already fear being trapped in a single space. Imagine how much more horrific it would be trapped in a single time.
 
-Perhaps Hell is not a place, but a time, the same time looped over and over and overall again."""},
+Perhaps Hell is not a place, but a time, the same time looped over and over and over again."""},
 {"title":"RE: SHIP DATE WHEN?",
 "from": "Michael",
 "text": """Am I going crazy, or have we been working on 'training' this exact same version of the AI for months now? Years? Is this thing ever going to actually be used for anything? When is this thing going to ship?

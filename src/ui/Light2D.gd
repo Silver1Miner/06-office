@@ -3,7 +3,7 @@ extends Light2D
 onready var noise = OpenSimplexNoise.new()
 var value = 0.0
 var on := true
-const MAX_VALUE = 10000000
+const MAX_VALUE = 20000000
 
 func _ready() -> void:
 	randomize()

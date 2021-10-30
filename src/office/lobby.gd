@@ -1,6 +1,7 @@
 extends TextureRect
 
 func _ready() -> void:
+	PlayerData.screen_switch_speed = 2
 	if $to_hallway.connect("meter_full", self, "_go_to_hallway") != OK:
 		push_error("signal connect fail")
 	if $to_elevator.connect("meter_full", self, "_go_to_elevator") != OK:
@@ -21,6 +22,13 @@ func _ready() -> void:
 		$Tooltip4.visible = false
 	if PlayerData.current_level < 1:
 		PlayerData.current_level = 1
+	if PlayerData.has_not_drunk:
+		$Tooltip/text.text = """Refrigerator.
+Nothing but energy drinks, restocked daily.
+I never drink the stuff."""
+	else:
+		$Tooltip/text.text = """Refrigerator.
+Nothing but energy drinks, restocked daily."""
 
 func _go_to_bathroom() -> void:
 	if get_tree().change_scene_to(PlayerData.bathroom_dir) != OK:

@@ -2,6 +2,7 @@ extends TextureRect
 
 #onready var screen = $screen
 func _ready() -> void:
+	PlayerData.screen_switch_speed = 2
 	select_background()
 	if $to_computer.connect("meter_full", self, "_on_screen_enter") != OK:
 		push_error("signal connect fail")
